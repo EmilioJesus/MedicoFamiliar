@@ -577,57 +577,69 @@ class principalmedico extends Component {
                            domingo1.push(doc.id);
                         });
                         resultados.innerHTML += `
-                <div class="animate__animated animate__fadeIn">
-                <img src=${imagenperfil} style="width:13rem"/></br>
-                <label>Nombre:Dr.${nombre}</label></br>
-                <label>Cedula:${cedula}</label></br>
-                <label>Email:${email}</label></br>
-                <label>Especialidad:${especialidad}</label></br>
-                <label>Costo de la consulta:$${costo}</label></br>
-                <label>Descripcion:${descripcion}</label></br>
-                <label>Estado:${estadores}</label></br>
+                <div class="animate__animated animate__fadeIn contentBlanco resultados">
+
+                <div class="foto"><img src=${imagenperfil} /></div>
+
+                <div class="infoDoc"> 
+                <h3>Datos Generales <i class="ri-nurse-fill"></i> </h3>
+                <label> <b>Nombre:</b> </br> Dr.${nombre}</label>
+                <label><b>Email:</b> </br> ${email}</label>
+                <label><b>Especialidad:</b> </br>${especialidad}</label>
+                <label><b>Costo de la consulta:$</b> </br> ${costo}</label>
+                <label><b>Estado:</b> </br>${estadores}</label></br>
+                </div>
+                
+                <div class="descripcion">
+                <label><b>Cedula:</b> </br>${cedula}</label>
+                <label><b>Descripcion:</b> </br> ${descripcion}</label>
+                </div> 
+                
+                <div class="horarios"> 
+                <h3>Horarios de atención <i class="ri-time-fill"></i></h3>
                 <label>Lunes-${lunesfecha}:</lable>${lunes
                            .map(
                               (val, index) =>
-                                 `<a href="/agendarmedico?id=${codijo}&horario=${val}&indice=${lunes1[index]}&dia=Lunes&fecha=${lunesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${lunes1[index]}&dia=Lunes&fecha=${lunesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
+                           .join(" ")}</br></br>
                 <label>Martes-${martesfecha}:</lable>${martes
                            .map(
                               (val, index) =>
-                                 `<a href="/agendarmedico?id=${codijo}&horario=${val}&indice=${martes1[index]}&dia=Martes&fecha=${martesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${martes1[index]}&dia=Martes&fecha=${martesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
+                           .join(" ")}</br></br>
                 <label>Miercoles-${miercolesfecha}:</lable>${miercoles
                            .map(
                               (val, index) =>
-                                 `<a href="/agendarmedico?id=${codijo}&horario=${val}&indice=${miercoles1[index]}&dia=Mircoles&fecha=${miercolesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${miercoles1[index]}&dia=Mircoles&fecha=${miercolesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
+                           .join(" ")}</br></br>
                 <label>Jueves-${juevesfecha}:</lable>${jueves
                            .map(
                               (val, index) =>
-                                 `<a href="/agendarmedico?id=${codijo}&horario=${val}&indice=${jueves1[index]}&dia=Jueves&fecha=${juevesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${jueves1[index]}&dia=Jueves&fecha=${juevesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
+                           .join(" ")}</br></br>
                 <label>Viernes-${viernesfecha}:</lable>${viernes
                            .map(
                               (val, index) =>
-                                 `<a href="/agendarmedico?id=${codijo}&horario=${val}&indice=${viernes1[index]}&dia=Viernes&fecha=${viernesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${viernes1[index]}&dia=Viernes&fecha=${viernesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
+                           .join(" ")}</br></br>
                 <label>Sabado-${sabadofecha}:</lable>${sabado
                            .map(
                               (val, index) =>
-                                 `<a href="/agendarmedico?id=${codijo}&horario=${val}&indice=${sabado1[index]}&dia=Sabado&fecha=${sabadofecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${sabado1[index]}&dia=Sabado&fecha=${sabadofecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
+                           .join(" ")}</br></br>
                 <label>Domingo-${domingofecha}:</lable>${domingo
                            .map(
                               (val, index) =>
-                                 `<a href="/agendarmedico?id=${codijo}&horario=${val}&indice=${domingo1[index]}&dia=Domigo&fecha=${domingofecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${domingo1[index]}&dia=Domigo&fecha=${domingofecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
+                           .join(" ")}  
+                           </div>   
                  </div>`;
                      });
                });
@@ -756,58 +768,70 @@ class principalmedico extends Component {
                            domingo1.push(doc.id);
                         });
                         resultados.innerHTML += `
-                <div class="animate__animated animate__fadeIn">
-                <div ><img src=${imagenperfil} alt="Foto doctor"style="width:13rem"/></div>
-                <label>Nombre:Dr.${nombre}</label></br>
-                <label>Cedula:${cedula}</label></br>
-                <label>Email:${email}</label></br>
-                <label>Especialidad:${especialidad}</label></br>
-                <label>Costo de la consulta:$${costo}</label></br>
-                <label>Descripcion:${descripcion}</label></br>
-                <label>Estado:${estadores}</label></br>
-                <label>Lunes-${lunesfecha}:</lable>${lunes
+                        <div class="animate__animated animate__fadeIn contentBlanco resultados">
+        
+                        <div class="foto"><img src=${imagenperfil} /></div>
+        
+                        <div class="infoDoc"> 
+                        <h3>Datos Generales <i class="ri-nurse-fill"></i> </h3>
+                        <label> <b>Nombre:</b> </br> Dr.${nombre}</label>
+                        <label><b>Email:</b> </br> ${email}</label>
+                        <label><b>Especialidad:</b> </br>${especialidad}</label>
+                        <label><b>Costo de la consulta:$</b> </br> ${costo}</label>
+                        <label><b>Estado:</b> </br>${estadores}</label></br>
+                        </div>
+                        
+                        <div class="descripcion">
+                        <label><b>Cedula:</b> </br>${cedula}</label>
+                        <label><b>Descripcion:</b> </br> ${descripcion}</label>
+                        </div> 
+                        
+                        <div class="horarios"> 
+                        <h3>Horarios de atención <i class="ri-time-fill"></i></h3>
+                        <label>Lunes-${lunesfecha}:</lable>${lunes
                            .map(
                               (val, index) =>
-                                 `<a href="/agendarmedico?id=${codijo}&horario=${val}&indice=${lunes1[index]}&dia=Lunes&fecha=${lunesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${lunes1[index]}&dia=Lunes&fecha=${lunesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
-                <label>Martes-${martesfecha}:</lable>${martes
+                           .join(" ")}</br></br>
+                        <label>Martes-${martesfecha}:</lable>${martes
                            .map(
                               (val, index) =>
-                                 `<a href="/agendarmedico?id=${codijo}&horario=${val}&indice=${martes1[index]}&dia=Martes&fecha=${martesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${martes1[index]}&dia=Martes&fecha=${martesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
-                <label>Miercoles-${miercolesfecha}:</lable>${miercoles
+                           .join(" ")}</br></br>
+                        <label>Miercoles-${miercolesfecha}:</lable>${miercoles
                            .map(
                               (val, index) =>
-                                 `<a href="/agendarmedico?id=${codijo}&horario=${val}&indice=${miercoles1[index]}&dia=Miercoles&fecha=${miercolesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${miercoles1[index]}&dia=Mircoles&fecha=${miercolesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
-                <label>Jueves-${juevesfecha}:</lable>${jueves
+                           .join(" ")}</br></br>
+                        <label>Jueves-${juevesfecha}:</lable>${jueves
                            .map(
                               (val, index) =>
-                                 `<a href="/agendarmedico?id=${codijo}&horario=${val}&indice=${jueves1[index]}&dia=Jueves&fecha=${juevesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${jueves1[index]}&dia=Jueves&fecha=${juevesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
-                <label>Viernes-${viernesfecha}:</lable>${viernes
+                           .join(" ")}</br></br>
+                        <label>Viernes-${viernesfecha}:</lable>${viernes
                            .map(
                               (val, index) =>
-                                 `<a href="/agendarmedico?id=${codijo}&horario=${val}&indice=${viernes1[index]}&dia=Viernes&fecha=${viernesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${viernes1[index]}&dia=Viernes&fecha=${viernesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
-                <label>Sabado-${sabadofecha}:</lable>${sabado
+                           .join(" ")}</br></br>
+                        <label>Sabado-${sabadofecha}:</lable>${sabado
                            .map(
                               (val, index) =>
-                                 `<a href="/agendarmedico?id=${codijo}&horario=${val}&indice=${sabado1[index]}&dia=Sabado&fecha=${sabadofecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${sabado1[index]}&dia=Sabado&fecha=${sabadofecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
-                <label>Domingo-${domingofecha}:</lable>${domingo
+                           .join(" ")}</br></br>
+                        <label>Domingo-${domingofecha}:</lable>${domingo
                            .map(
                               (val, index) =>
-                                 `<a href="/agendarmedico?id=${codijo}&horario=${val}&indice=${domingo1[index]}&dia=Domingo&fecha=${domingofecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${domingo1[index]}&dia=Domigo&fecha=${domingofecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
-                           </div>`;
+                           .join(" ")}  
+                                   </div>   
+                         </div>`;
                      });
                });
             });
@@ -906,7 +930,7 @@ class principalmedico extends Component {
             </div>
 
             <div className="contenedor">
-               <div id="resultadosbusqueda1" style={{ overflow: "auto" }}></div>
+               <div id="resultadosbusqueda1"></div>
             </div>
 
             <div>

@@ -587,7 +587,7 @@ class principalpaciente extends Component {
                            domingo1.push(doc.id);
                         });
                         resultados.innerHTML += `
-                        <div class="animate__animated animate__fadeIn">
+                <div class="animate__animated animate__fadeIn contentApricot resultados">
                 <img src="${imagenperfil}" style="width:13rem"/></br>
                 <label>Nombre:Dr.${nombre}</label></br>
                 <label>Cedula:${cedula}</label></br>
@@ -597,11 +597,11 @@ class principalpaciente extends Component {
                 <label>Descripcion:${descripcion}</label></br>
                 <label>Estado:${estadores}</label></br>
                 <label>Lunes-${lunesfecha}:</lable>${lunes
-                  .map(
-                     (val, index) =>
-                        `<a href="/agendarmedico?id=${codijo}&horario=${val}&indice=${lunes1[index]}&dia=Lunes&fecha=${lunesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
-                  )
-                  .join(" ")}</br>
+                           .map(
+                              (val, index) =>
+                                 `<a href="/agendarmedico?id=${codijo}&horario=${val}&indice=${lunes1[index]}&dia=Lunes&fecha=${lunesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                           )
+                           .join(" ")}</br>
                 <label>Martes-${martesfecha}:</lable>${martes
                            .map(
                               (val, index) =>
@@ -773,7 +773,7 @@ class principalpaciente extends Component {
                            domingo1.push(doc.id);
                         });
                         resultados.innerHTML += `
-                        <div class="animate__animated animate__fadeIn">
+               <div class="animate__animated animate__fadeIn contentApricot resultados">
                 <img src=${imagenperfil} style="width:13rem"/></br>
                 <label>Nombre:Dr.${nombre}</label></br>
                 <label>Cedula:${cedula}</label></br>
