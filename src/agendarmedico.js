@@ -268,70 +268,99 @@ class agendarmedico extends Component {
    render() {
       return (
          <div className="App" onLoad={(this.especialidad, this.estado)}>
-            <h2>Agendar</h2>
-            <label>¿Para quien la cita?</label>
-            <br />
-            <select id="personacita">
-               <option>Para mi</option>
-               <option>Para otra persona</option>
-            </select>
-            <br />
-            <label>Motivo de la visita</label>
-            <br />
-            <textarea id="motivocita"></textarea>
-            <br />
-            <label>Es primera visita</label>
-            <br />
-            <select id="primeracita">
-               <option>Si</option>
-               <option>No</option>
-            </select>
-            <br />
-            <label>Nombres</label>
-            <br />
-            <input type="text" id="nombrecita"></input>
-            <br />
-            <label>Apellido Paterno</label>
-            <br />
-            <input type="text" id="apellidoPcita"></input>
-            <br />
-            <label>Apellido Materno</label>
-            <br />
-            <input type="text" id="apellidoMcita"></input>
-            <br />
-            <label>Fecha de Nacimiento</label>
-            <br />
-            <input type="date" id="fecha"></input>
-            <br />
-            <label>Telefono</label>
-            <br />
-            <input type="number" id="telefono"></input>
-            <br />
-            <label>Email</label>
-            <br />
-            <input type="email" id="email"></input>
-            <br />
-            <label>Precio de la cita</label>
-            <br />
-            <input type="text" id="preciocita" disabled></input>
-            <br />
-            <label>Fecha de la cita</label>
-            <br />
-            <input type="text" id="fechacita" disabled></input>
-            <br />
-            <label>Horario de la cita</label>
-            <br />
-            <input type="text" id="horariocita" disabled></input>
-            <br />
-            <label>Tipo de consulta</label>
-            <br />
-            <input type="text" id="tipoconsulta" disabled></input>
-            <br />
-            <label>Comentarios</label>
-            <br />
-            <textarea id="comentarios"></textarea>
-            <br />
-            <input type="button" onClick={this.agendar} value="Agendar" />
+            <h2 className="titulo">
+               Agendar <i class="ri-capsule-fill"></i>
+            </h2>
+            <div className="contentModificar contentBlanco">
+               <label className="tituloTabla">¿Para quien la cita?</label>
+               <br />
+               <select className="input" id="personacita">
+                  <option>Para mi</option>
+                  <option>Para otra persona</option>
+               </select>
+               <br />
+               <label className="tituloTabla">Motivo de la visita</label>
+               <br />
+               <textarea className="textArea" id="motivocita"></textarea>
+               <br />
+               <label className="tituloTabla">Es primera visita</label>
+               <br />
+               <select className="input" id="primeracita">
+                  <option>Si</option>
+                  <option>No</option>
+               </select>
+               <br />
+               <label className="tituloTabla">Nombres</label>
+               <br />
+               <input className="input" type="text" id="nombrecita"></input>
+               <br />
+               <label className="tituloTabla">Apellido Paterno</label>
+               <br />
+               <input className="input" type="text" id="apellidoPcita"></input>
+               <br />
+               <label className="tituloTabla">Apellido Materno</label>
+               <br />
+               <input className="input" type="text" id="apellidoMcita"></input>
+               <br />
+               <label className="tituloTabla">Fecha de Nacimiento</label>
+               <br />
+               <input className="input" type="date" id="fecha"></input>
+               <br />
+               <label className="tituloTabla">Telefono</label>
+               <br />
+               <input className="input" type="number" id="telefono"></input>
+               <br />
+               <label className="tituloTabla">Email</label>
+               <br />
+               <input className="input" type="email" id="email"></input>
+               <br />
+               <label className="tituloTabla">Precio de la cita</label>
+               <br />
+               <input
+                  className="input"
+                  type="text"
+                  id="preciocita"
+                  disabled
+               ></input>
+               <br />
+               <label className="tituloTabla">Fecha de la cita</label>
+               <br />
+               <input
+                  className="input"
+                  type="text"
+                  id="fechacita"
+                  disabled
+               ></input>
+               <br />
+               <label className="tituloTabla">Horario de la cita</label>
+               <br />
+               <input
+                  className="input"
+                  type="text"
+                  id="horariocita"
+                  disabled
+               ></input>
+               <br />
+               <label className="tituloTabla">Tipo de consulta</label>
+               <br />
+               <input
+                  className="input"
+                  type="text"
+                  id="tipoconsulta"
+                  disabled
+               ></input>
+               <br />
+               <label className="tituloTabla">Comentarios</label>
+               <br />
+               <textarea className="textArea" id="comentarios"></textarea>
+               <br />
+               <button
+                  className="btn-principal seconbtn"
+                  onClick={this.agendar}
+               >
+                  Agendar
+               </button>
+            </div>
          </div>
       );
    }

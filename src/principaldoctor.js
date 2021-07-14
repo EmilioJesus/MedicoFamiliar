@@ -2,13 +2,7 @@ import React, { Component } from "react";
 import db from "./firebase_config";
 import firebase from "firebase/app";
 import "firebase/auth";
-import {
-   BrowserRouter as Router,
-   Switch,
-   Route,
-   Link,
-   onload,
-} from "react-router-dom";
+import MenuDoctor from "./Components/Menu/MenuDoctor";
 
 class principaldoctor extends Component {
    componentDidMount() {
@@ -170,10 +164,8 @@ class principaldoctor extends Component {
                         `;
                               }
                            });
-                           if(citas.innerHTML=="")
-                           {
-                              citas.innerHTML += `<h2>Todavia no hay resultados</h2></br>`
-         
+                           if (citas.innerHTML == "") {
+                              citas.innerHTML += `<h2>Todavia no hay resultados</h2></br>`;
                            }
                         });
                   } else {
@@ -230,10 +222,8 @@ class principaldoctor extends Component {
                         <label>Comentario: ${comentario}</label></br>
                         `;
                   });
-                  if(citas.innerHTML=="")
-                  {
-                     citas.innerHTML += `<h2>Todavia no hay resultados</h2></br>`
-
+                  if (citas.innerHTML == "") {
+                     citas.innerHTML += `<h2>Todavia no hay resultados</h2></br>`;
                   }
                });
          }
@@ -286,10 +276,8 @@ class principaldoctor extends Component {
                           
                           `;
                   });
-                  if(citas.innerHTML=="")
-                  {
-                     citas.innerHTML += `<h2>Todavia no hay resultados</h2></br>`
-
+                  if (citas.innerHTML == "") {
+                     citas.innerHTML += `<h2>Todavia no hay resultados</h2></br>`;
                   }
                });
          }
@@ -313,13 +301,8 @@ class principaldoctor extends Component {
    render() {
       return (
          <div onload={(this.logeado, this.especialidad, this.estado)}>
-            <div>
-               <a href="/perfil_doctor">Perfil</a>
+            <MenuDoctor cerrar_sesion={this.cerrar_sesion} />
 
-               <a href="" onClick={this.cerrar_sesion}>
-                  Cerrar Sesion
-               </a>
-            </div>
             <h2>Citas pendientes</h2>
             <div id="citas"></div>
             <h2>Citas canceladas</h2>

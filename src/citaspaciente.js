@@ -140,10 +140,8 @@ class citaspaciente extends React.Component {
                           `;
                      }
                   });
-                  if(citas.innerHTML=="")
-                  {
-                     citas.innerHTML += `<h2>Todavia no hay resultados</h2></br>`
-
+                  if (citas.innerHTML == "") {
+                     citas.innerHTML += `<h2 class="tituloTabla">Todavia no hay resultados</h2></br>`;
                   }
                });
          }
@@ -379,10 +377,8 @@ class citaspaciente extends React.Component {
                           <label>Comentario: ${comentario}</label></br>
                           `;
                   });
-                  if(citas.innerHTML=="")
-                  {
-                     citas.innerHTML += `<h2>Todavia no hay resultados</h2></br>`
-
+                  if (citas.innerHTML == "") {
+                     citas.innerHTML += `<h2 class="tituloTabla">Todavia no hay resultados</h2></br>`;
                   }
                });
          }
@@ -435,10 +431,8 @@ class citaspaciente extends React.Component {
                           
                           `;
                   });
-                  if(citas.innerHTML=="")
-                  {
-                     citas.innerHTML += `<h2>Todavia no hay resultados</h2></br>`
-
+                  if (citas.innerHTML == "") {
+                     citas.innerHTML += `<h2 class="tituloTabla">Todavia no hay resultados</h2></br>`;
                   }
                });
          }
@@ -462,14 +456,19 @@ class citaspaciente extends React.Component {
    render() {
       return (
          <div onLoad={this.citas}>
-            <MenuLoggedUser />
+            <MenuLoggedUser cerrar_sesion={this.cerrar_sesion} />
 
-            <h2>Citas</h2>
-            <div id="resultadocitas" style={{ overflow: "auto" }}></div>
-            <h2>Citas canceladas</h2>
-            <div id="citascanceladas" style={{ overflow: "auto" }}></div>
-            <h2>Citas realizadas</h2>
-            <div id="citasrealizadas" style={{ overflow: "auto" }}></div>
+            <h2 className="titulo">
+               Mis Citas <i class="ri-hospital-fill"></i>
+            </h2>
+            <div className="contenedor contentBlanco">
+               <h2 className="tituloCitas">Citas recientes</h2>
+               <div id="resultadocitas"></div>
+               <h2 className="tituloCitas">Citas canceladas</h2>
+               <div id="citascanceladas"></div>
+               <h2 className="tituloCitas">Citas realizadas</h2>
+               <div id="citasrealizadas"></div>
+            </div>
          </div>
       );
    }

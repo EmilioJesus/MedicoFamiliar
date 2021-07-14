@@ -14,7 +14,7 @@ class principalmedico extends Component {
 
    especialidad() {
       const select = document.getElementById("selectespecialidad");
-      var especialidad = [];
+      let especialidad = [];
       db.collection("Administrador")
          .doc("Especialidades")
          .collection("Especialidad1")
@@ -23,14 +23,14 @@ class principalmedico extends Component {
             querySnapshot.forEach((doc) => {
                especialidad.push(doc.data().Especialidad);
             });
-            for (var x = 0; x <= especialidad.length; x++) {
+            for (let x = 0; x <= especialidad.length; x++) {
                select.options[x] = new Option(especialidad[x]);
             }
          });
    }
    estado() {
       const select = document.getElementById("selectestado");
-      var estado = [];
+      let estado = [];
       db.collection("Administrador")
          .doc("Estado")
          .collection("Estado1")
@@ -39,16 +39,16 @@ class principalmedico extends Component {
             querySnapshot.forEach((doc) => {
                estado.push(doc.data().Estado);
             });
-            for (var x = 0; x <= estado.length; x++) {
+            for (let x = 0; x <= estado.length; x++) {
                select.options[x] = new Option(estado[x]);
             }
          });
    }
 
    buscardocores() {
-      var hoy = new Date();
-      var dia = hoy.getDay();
-      var lunesfecha,
+      let hoy = new Date();
+      let dia = hoy.getDay();
+      let lunesfecha,
          martesfecha,
          miercolesfecha,
          juevesfecha,
@@ -62,48 +62,48 @@ class principalmedico extends Component {
             (hoy.getMonth() + 1) +
             "/" +
             hoy.getDate();
-         var martessuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
-         var martesresultado = new Date(martessuma);
+         let martessuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
+         let martesresultado = new Date(martessuma);
          martesfecha =
             martesresultado.getFullYear() +
             "/" +
             (martesresultado.getMonth() + 1) +
             "/" +
             martesresultado.getDate();
-         var miercolessuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
-         var miercolesresultado = new Date(miercolessuma);
+         let miercolessuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
+         let miercolesresultado = new Date(miercolessuma);
          miercolesfecha =
             miercolesresultado.getFullYear() +
             "/" +
             (miercolesresultado.getMonth() + 1) +
             "/" +
             miercolesresultado.getDate();
-         var juevessuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
-         var juevesresultado = new Date(juevessuma);
+         let juevessuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
+         let juevesresultado = new Date(juevessuma);
          juevesfecha =
             juevesresultado.getFullYear() +
             "/" +
             (juevesresultado.getMonth() + 1) +
             "/" +
             juevesresultado.getDate();
-         var viernessuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
-         var viernesresultado = new Date(viernessuma);
+         let viernessuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
+         let viernesresultado = new Date(viernessuma);
          viernesfecha =
             viernesresultado.getFullYear() +
             "/" +
             (viernesresultado.getMonth() + 1) +
             "/" +
             viernesresultado.getDate();
-         var sabadosuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
-         var sabadoresultado = new Date(sabadosuma);
+         let sabadosuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
+         let sabadoresultado = new Date(sabadosuma);
          sabadofecha =
             sabadoresultado.getFullYear() +
             "/" +
             (sabadoresultado.getMonth() + 1) +
             "/" +
             sabadoresultado.getDate();
-         var domingosuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
-         var domingoresultado = new Date(domingosuma);
+         let domingosuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
+         let domingoresultado = new Date(domingosuma);
          domingofecha =
             domingoresultado.getFullYear() +
             "/" +
@@ -112,8 +112,8 @@ class principalmedico extends Component {
             domingoresultado.getDate();
       }
       if (dia == 2) {
-         var lunessuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
-         var lunesresultado = new Date(lunessuma);
+         let lunessuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
+         let lunesresultado = new Date(lunessuma);
          lunesfecha =
             lunesresultado.getFullYear() +
             "/" +
@@ -126,40 +126,40 @@ class principalmedico extends Component {
             (hoy.getMonth() + 1) +
             "/" +
             hoy.getDate();
-         var miercolessuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
-         var miercolesresultado = new Date(miercolessuma);
+         let miercolessuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
+         let miercolesresultado = new Date(miercolessuma);
          miercolesfecha =
             miercolesresultado.getFullYear() +
             "/" +
             (miercolesresultado.getMonth() + 1) +
             "/" +
             miercolesresultado.getDate();
-         var juevessuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
-         var juevesresultado = new Date(juevessuma);
+         let juevessuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
+         let juevesresultado = new Date(juevessuma);
          juevesfecha =
             juevesresultado.getFullYear() +
             "/" +
             (juevesresultado.getMonth() + 1) +
             "/" +
             juevesresultado.getDate();
-         var viernessuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
-         var viernesresultado = new Date(viernessuma);
+         let viernessuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
+         let viernesresultado = new Date(viernessuma);
          viernesfecha =
             viernesresultado.getFullYear() +
             "/" +
             (viernesresultado.getMonth() + 1) +
             "/" +
             viernesresultado.getDate();
-         var sabadosuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
-         var sabadoresultado = new Date(sabadosuma);
+         let sabadosuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
+         let sabadoresultado = new Date(sabadosuma);
          sabadofecha =
             sabadoresultado.getFullYear() +
             "/" +
             (sabadoresultado.getMonth() + 1) +
             "/" +
             sabadoresultado.getDate();
-         var domingosuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
-         var domingoresultado = new Date(domingosuma);
+         let domingosuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
+         let domingoresultado = new Date(domingosuma);
          domingofecha =
             domingoresultado.getFullYear() +
             "/" +
@@ -168,16 +168,16 @@ class principalmedico extends Component {
             domingoresultado.getDate();
       }
       if (dia == 3) {
-         var lunessuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
-         var lunesresultado = new Date(lunessuma);
+         let lunessuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
+         let lunesresultado = new Date(lunessuma);
          lunesfecha =
             lunesresultado.getFullYear() +
             "/" +
             (lunesresultado.getMonth() + 1) +
             "/" +
             lunesresultado.getDate();
-         var martessuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
-         var martesresultado = new Date(martessuma);
+         let martessuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
+         let martesresultado = new Date(martessuma);
          martesfecha =
             martesresultado.getFullYear() +
             "/" +
@@ -190,32 +190,32 @@ class principalmedico extends Component {
             (hoy.getMonth() + 1) +
             "/" +
             hoy.getDate();
-         var juevessuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
-         var juevesresultado = new Date(juevessuma);
+         let juevessuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
+         let juevesresultado = new Date(juevessuma);
          juevesfecha =
             juevesresultado.getFullYear() +
             "/" +
             (juevesresultado.getMonth() + 1) +
             "/" +
             juevesresultado.getDate();
-         var viernessuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
-         var viernesresultado = new Date(viernessuma);
+         let viernessuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
+         let viernesresultado = new Date(viernessuma);
          viernesfecha =
             viernesresultado.getFullYear() +
             "/" +
             (viernesresultado.getMonth() + 1) +
             "/" +
             viernesresultado.getDate();
-         var sabadosuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
-         var sabadoresultado = new Date(sabadosuma);
+         let sabadosuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
+         let sabadoresultado = new Date(sabadosuma);
          sabadofecha =
             sabadoresultado.getFullYear() +
             "/" +
             (sabadoresultado.getMonth() + 1) +
             "/" +
             sabadoresultado.getDate();
-         var domingosuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
-         var domingoresultado = new Date(domingosuma);
+         let domingosuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
+         let domingoresultado = new Date(domingosuma);
          domingofecha =
             domingoresultado.getFullYear() +
             "/" +
@@ -224,24 +224,24 @@ class principalmedico extends Component {
             domingoresultado.getDate();
       }
       if (dia == 4) {
-         var lunessuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
-         var lunesresultado = new Date(lunessuma);
+         let lunessuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
+         let lunesresultado = new Date(lunessuma);
          lunesfecha =
             lunesresultado.getFullYear() +
             "/" +
             (lunesresultado.getMonth() + 1) +
             "/" +
             lunesresultado.getDate();
-         var martessuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
-         var martesresultado = new Date(martessuma);
+         let martessuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
+         let martesresultado = new Date(martessuma);
          martesfecha =
             martesresultado.getFullYear() +
             "/" +
             (martesresultado.getMonth() + 1) +
             "/" +
             martesresultado.getDate();
-         var miercolessuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
-         var miercolesresultado = new Date(miercolessuma);
+         let miercolessuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
+         let miercolesresultado = new Date(miercolessuma);
          miercolesfecha =
             miercolesresultado.getFullYear() +
             "/" +
@@ -254,24 +254,24 @@ class principalmedico extends Component {
             (hoy.getMonth() + 1) +
             "/" +
             hoy.getDate();
-         var viernessuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
-         var viernesresultado = new Date(viernessuma);
+         let viernessuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
+         let viernesresultado = new Date(viernessuma);
          viernesfecha =
             viernesresultado.getFullYear() +
             "/" +
             (viernesresultado.getMonth() + 1) +
             "/" +
             viernesresultado.getDate();
-         var sabadosuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
-         var sabadoresultado = new Date(sabadosuma);
+         let sabadosuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
+         let sabadoresultado = new Date(sabadosuma);
          sabadofecha =
             sabadoresultado.getFullYear() +
             "/" +
             (sabadoresultado.getMonth() + 1) +
             "/" +
             sabadoresultado.getDate();
-         var domingosuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
-         var domingoresultado = new Date(domingosuma);
+         let domingosuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
+         let domingoresultado = new Date(domingosuma);
          domingofecha =
             domingoresultado.getFullYear() +
             "/" +
@@ -281,32 +281,32 @@ class principalmedico extends Component {
       }
 
       if (dia == 5) {
-         var lunessuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
-         var lunesresultado = new Date(lunessuma);
+         let lunessuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
+         let lunesresultado = new Date(lunessuma);
          lunesfecha =
             lunesresultado.getFullYear() +
             "/" +
             (lunesresultado.getMonth() + 1) +
             "/" +
             lunesresultado.getDate();
-         var martessuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
-         var martesresultado = new Date(martessuma);
+         let martessuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
+         let martesresultado = new Date(martessuma);
          martesfecha =
             martesresultado.getFullYear() +
             "/" +
             (martesresultado.getMonth() + 1) +
             "/" +
             martesresultado.getDate();
-         var miercolessuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
-         var miercolesresultado = new Date(miercolessuma);
+         let miercolessuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
+         let miercolesresultado = new Date(miercolessuma);
          miercolesfecha =
             miercolesresultado.getFullYear() +
             "/" +
             (miercolesresultado.getMonth() + 1) +
             "/" +
             miercolesresultado.getDate();
-         var juevessuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
-         var juevesresultado = new Date(juevessuma);
+         let juevessuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
+         let juevesresultado = new Date(juevessuma);
          juevesfecha =
             juevesresultado.getFullYear() +
             "/" +
@@ -319,16 +319,16 @@ class principalmedico extends Component {
             (hoy.getMonth() + 1) +
             "/" +
             hoy.getDate();
-         var sabadosuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
-         var sabadoresultado = new Date(sabadosuma);
+         let sabadosuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
+         let sabadoresultado = new Date(sabadosuma);
          sabadofecha =
             sabadoresultado.getFullYear() +
             "/" +
             (sabadoresultado.getMonth() + 1) +
             "/" +
             sabadoresultado.getDate();
-         var domingosuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
-         var domingoresultado = new Date(domingosuma);
+         let domingosuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
+         let domingoresultado = new Date(domingosuma);
          domingofecha =
             domingoresultado.getFullYear() +
             "/" +
@@ -338,40 +338,40 @@ class principalmedico extends Component {
       }
 
       if (dia == 6) {
-         var lunessuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
-         var lunesresultado = new Date(lunessuma);
+         let lunessuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
+         let lunesresultado = new Date(lunessuma);
          lunesfecha =
             lunesresultado.getFullYear() +
             "/" +
             (lunesresultado.getMonth() + 1) +
             "/" +
             lunesresultado.getDate();
-         var martessuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
-         var martesresultado = new Date(martessuma);
+         let martessuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
+         let martesresultado = new Date(martessuma);
          martesfecha =
             martesresultado.getFullYear() +
             "/" +
             (martesresultado.getMonth() + 1) +
             "/" +
             martesresultado.getDate();
-         var miercolessuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
-         var miercolesresultado = new Date(miercolessuma);
+         let miercolessuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
+         let miercolesresultado = new Date(miercolessuma);
          miercolesfecha =
             miercolesresultado.getFullYear() +
             "/" +
             (miercolesresultado.getMonth() + 1) +
             "/" +
             miercolesresultado.getDate();
-         var juevessuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
-         var juevesresultado = new Date(juevessuma);
+         let juevessuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
+         let juevesresultado = new Date(juevessuma);
          juevesfecha =
             juevesresultado.getFullYear() +
             "/" +
             (juevesresultado.getMonth() + 1) +
             "/" +
             juevesresultado.getDate();
-         var viernessuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
-         var viernesresultado = new Date(viernessuma);
+         let viernessuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
+         let viernesresultado = new Date(viernessuma);
          viernesfecha =
             viernesresultado.getFullYear() +
             "/" +
@@ -384,8 +384,8 @@ class principalmedico extends Component {
             (hoy.getMonth() + 1) +
             "/" +
             hoy.getDate();
-         var domingosuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
-         var domingoresultado = new Date(domingosuma);
+         let domingosuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
+         let domingoresultado = new Date(domingosuma);
          domingofecha =
             domingoresultado.getFullYear() +
             "/" +
@@ -394,48 +394,48 @@ class principalmedico extends Component {
             domingoresultado.getDate();
       }
       if (dia == 0) {
-         var lunessuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
-         var lunesresultado = new Date(lunessuma);
+         let lunessuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
+         let lunesresultado = new Date(lunessuma);
          lunesfecha =
             lunesresultado.getFullYear() +
             "/" +
             (lunesresultado.getMonth() + 1) +
             "/" +
             lunesresultado.getDate();
-         var martessuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
-         var martesresultado = new Date(martessuma);
+         let martessuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
+         let martesresultado = new Date(martessuma);
          martesfecha =
             martesresultado.getFullYear() +
             "/" +
             (martesresultado.getMonth() + 1) +
             "/" +
             martesresultado.getDate();
-         var miercolessuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
-         var miercolesresultado = new Date(miercolessuma);
+         let miercolessuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
+         let miercolesresultado = new Date(miercolessuma);
          miercolesfecha =
             miercolesresultado.getFullYear() +
             "/" +
             (miercolesresultado.getMonth() + 1) +
             "/" +
             miercolesresultado.getDate();
-         var juevessuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
-         var juevesresultado = new Date(juevessuma);
+         let juevessuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
+         let juevesresultado = new Date(juevessuma);
          juevesfecha =
             juevesresultado.getFullYear() +
             "/" +
             (juevesresultado.getMonth() + 1) +
             "/" +
             juevesresultado.getDate();
-         var viernessuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
-         var viernesresultado = new Date(viernessuma);
+         let viernessuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
+         let viernesresultado = new Date(viernessuma);
          viernesfecha =
             viernesresultado.getFullYear() +
             "/" +
             (viernesresultado.getMonth() + 1) +
             "/" +
             viernesresultado.getDate();
-         var sabadosuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
-         var sabadoresultado = new Date(sabadosuma);
+         let sabadosuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
+         let sabadoresultado = new Date(sabadosuma);
          sabadofecha =
             sabadoresultado.getFullYear() +
             "/" +
@@ -450,7 +450,7 @@ class principalmedico extends Component {
             hoy.getDate();
       }
 
-      var vacio = (document.getElementById("resultadosbusqueda1").innerHTML =
+      let vacio = (document.getElementById("resultadosbusqueda1").innerHTML =
          "");
       const especialidad = document.getElementById("selectespecialidad").value;
       const estado = document.getElementById("selectestado").value;
@@ -464,33 +464,33 @@ class principalmedico extends Component {
             .where("Estado", "==", estado)
             .onSnapshot((querySnapshot) => {
                querySnapshot.forEach((doc) => {
-                  var codijo = doc.id;
-                  var nombre1 = doc.data().Nombre;
-                  var apellidopaterno = doc.data().ApellidoPaterno;
-                  var apellidomaterno = doc.data().ApellidoMaterno;
-                  var nombre =
+                  let codijo = doc.id;
+                  let nombre1 = doc.data().Nombre;
+                  let apellidopaterno = doc.data().ApellidoPaterno;
+                  let apellidomaterno = doc.data().ApellidoMaterno;
+                  let nombre =
                      nombre1 + " " + apellidopaterno + " " + apellidomaterno;
-                  var cedula = doc.data().Cedula;
-                  var email = doc.data().Email;
-                  var especialidad = doc.data().Especialidad;
-                  var descripcion = doc.data().Descripcion;
-                  var estadores = doc.data().Estado;
-                  var imagenperfil = doc.data().ImagenPerfil;
-                  var costo = doc.data().Costoconsulta;
-                  var lunes = [];
-                  var martes = [];
-                  var miercoles = [];
-                  var jueves = [];
-                  var viernes = [];
-                  var sabado = [];
-                  var domingo = [];
-                  var lunes1 = [];
-                  var martes1 = [];
-                  var miercoles1 = [];
-                  var jueves1 = [];
-                  var viernes1 = [];
-                  var sabado1 = [];
-                  var domingo1 = [];
+                  let cedula = doc.data().Cedula;
+                  let email = doc.data().Email;
+                  let especialidad = doc.data().Especialidad;
+                  let descripcion = doc.data().Descripcion;
+                  let estadores = doc.data().Estado;
+                  let imagenperfil = doc.data().ImagenPerfil;
+                  let costo = doc.data().Costoconsulta;
+                  let lunes = [];
+                  let martes = [];
+                  let miercoles = [];
+                  let jueves = [];
+                  let viernes = [];
+                  let sabado = [];
+                  let domingo = [];
+                  let lunes1 = [];
+                  let martes1 = [];
+                  let miercoles1 = [];
+                  let jueves1 = [];
+                  let viernes1 = [];
+                  let sabado1 = [];
+                  let domingo1 = [];
 
                   db.collection(
                      "Usuarios/" + doc.id + "/HorariosLinea/Lunes/Lunes1"
@@ -651,33 +651,33 @@ class principalmedico extends Component {
             .where("Estado", "==", estado)
             .onSnapshot((querySnapshot) => {
                querySnapshot.forEach((doc) => {
-                  var codijo = doc.id;
-                  var nombre1 = doc.data().Nombre;
-                  var apellidopaterno = doc.data().ApellidoPaterno;
-                  var apellidomaterno = doc.data().ApellidoMaterno;
-                  var nombre =
+                  let codijo = doc.id;
+                  let nombre1 = doc.data().Nombre;
+                  let apellidopaterno = doc.data().ApellidoPaterno;
+                  let apellidomaterno = doc.data().ApellidoMaterno;
+                  let nombre =
                      nombre1 + " " + apellidopaterno + " " + apellidomaterno;
-                  var cedula = doc.data().Cedula;
-                  var email = doc.data().Email;
-                  var especialidad = doc.data().Especialidad;
-                  var descripcion = doc.data().Descripcion;
-                  var estadores = doc.data().Estado;
-                  var imagenperfil = doc.data().ImagenPerfil;
-                  var costo = doc.data().Costoconsulta;
-                  var lunes = [];
-                  var martes = [];
-                  var miercoles = [];
-                  var jueves = [];
-                  var viernes = [];
-                  var sabado = [];
-                  var domingo = [];
-                  var lunes1 = [];
-                  var martes1 = [];
-                  var miercoles1 = [];
-                  var jueves1 = [];
-                  var viernes1 = [];
-                  var sabado1 = [];
-                  var domingo1 = [];
+                  let cedula = doc.data().Cedula;
+                  let email = doc.data().Email;
+                  let especialidad = doc.data().Especialidad;
+                  let descripcion = doc.data().Descripcion;
+                  let estadores = doc.data().Estado;
+                  let imagenperfil = doc.data().ImagenPerfil;
+                  let costo = doc.data().Costoconsulta;
+                  let lunes = [];
+                  let martes = [];
+                  let miercoles = [];
+                  let jueves = [];
+                  let viernes = [];
+                  let sabado = [];
+                  let domingo = [];
+                  let lunes1 = [];
+                  let martes1 = [];
+                  let miercoles1 = [];
+                  let jueves1 = [];
+                  let viernes1 = [];
+                  let sabado1 = [];
+                  let domingo1 = [];
 
                   db.collection(
                      "Usuarios/" + doc.id + "/HorariosPresencial/Lunes/Lunes1"
@@ -839,16 +839,16 @@ class principalmedico extends Component {
    }
 
    opinar() {
-      var opinion = document.getElementById("opinar").value;
+      let opinion = document.getElementById("opinar").value;
       if (opinion != "") {
          firebase.auth().onAuthStateChanged((user) => {
-            var uid = user.uid;
+            let uid = user.uid;
             db.collection("Usuarios")
                .doc(uid)
                .onSnapshot((doc) => {
-                  var imagen = doc.data().ImagenPerfil;
-                  var email = doc.data().Email;
-                  var nombre =
+                  let imagen = doc.data().ImagenPerfil;
+                  let email = doc.data().Email;
+                  let nombre =
                      doc.data().Nombre +
                      " " +
                      doc.data().ApellidoPaterno +

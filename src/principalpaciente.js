@@ -16,7 +16,7 @@ class principalpaciente extends Component {
 
    especialidad() {
       const select = document.getElementById("selectespecialidad");
-      var especialidad = [];
+      let especialidad = [];
       db.collection("Administrador")
          .doc("Especialidades")
          .collection("Especialidad1")
@@ -25,14 +25,14 @@ class principalpaciente extends Component {
             querySnapshot.forEach((doc) => {
                especialidad.push(doc.data().Especialidad);
             });
-            for (var x = 0; x <= especialidad.length; x++) {
+            for (let x = 0; x <= especialidad.length; x++) {
                select.options[x] = new Option(especialidad[x]);
             }
          });
    }
    estado() {
       const select = document.getElementById("selectestado");
-      var estado = [];
+      let estado = [];
       db.collection("Administrador")
          .doc("Estado")
          .collection("Estado1")
@@ -41,7 +41,7 @@ class principalpaciente extends Component {
             querySnapshot.forEach((doc) => {
                estado.push(doc.data().Estado);
             });
-            for (var x = 0; x <= estado.length; x++) {
+            for (let x = 0; x <= estado.length; x++) {
                select.options[x] = new Option(estado[x]);
             }
          });
@@ -56,9 +56,9 @@ class principalpaciente extends Component {
    }
 
    buscardocores() {
-      var hoy = new Date();
-      var dia = hoy.getDay();
-      var lunesfecha,
+      let hoy = new Date();
+      let dia = hoy.getDay();
+      let lunesfecha,
          martesfecha,
          miercolesfecha,
          juevesfecha,
@@ -72,48 +72,48 @@ class principalpaciente extends Component {
             (hoy.getMonth() + 1) +
             "/" +
             hoy.getDate();
-         var martessuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
-         var martesresultado = new Date(martessuma);
+         let martessuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
+         let martesresultado = new Date(martessuma);
          martesfecha =
             martesresultado.getFullYear() +
             "/" +
             (martesresultado.getMonth() + 1) +
             "/" +
             martesresultado.getDate();
-         var miercolessuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
-         var miercolesresultado = new Date(miercolessuma);
+         let miercolessuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
+         let miercolesresultado = new Date(miercolessuma);
          miercolesfecha =
             miercolesresultado.getFullYear() +
             "/" +
             (miercolesresultado.getMonth() + 1) +
             "/" +
             miercolesresultado.getDate();
-         var juevessuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
-         var juevesresultado = new Date(juevessuma);
+         let juevessuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
+         let juevesresultado = new Date(juevessuma);
          juevesfecha =
             juevesresultado.getFullYear() +
             "/" +
             (juevesresultado.getMonth() + 1) +
             "/" +
             juevesresultado.getDate();
-         var viernessuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
-         var viernesresultado = new Date(viernessuma);
+         let viernessuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
+         let viernesresultado = new Date(viernessuma);
          viernesfecha =
             viernesresultado.getFullYear() +
             "/" +
             (viernesresultado.getMonth() + 1) +
             "/" +
             viernesresultado.getDate();
-         var sabadosuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
-         var sabadoresultado = new Date(sabadosuma);
+         let sabadosuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
+         let sabadoresultado = new Date(sabadosuma);
          sabadofecha =
             sabadoresultado.getFullYear() +
             "/" +
             (sabadoresultado.getMonth() + 1) +
             "/" +
             sabadoresultado.getDate();
-         var domingosuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
-         var domingoresultado = new Date(domingosuma);
+         let domingosuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
+         let domingoresultado = new Date(domingosuma);
          domingofecha =
             domingoresultado.getFullYear() +
             "/" +
@@ -122,8 +122,8 @@ class principalpaciente extends Component {
             domingoresultado.getDate();
       }
       if (dia == 2) {
-         var lunessuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
-         var lunesresultado = new Date(lunessuma);
+         let lunessuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
+         let lunesresultado = new Date(lunessuma);
          lunesfecha =
             lunesresultado.getFullYear() +
             "/" +
@@ -136,40 +136,40 @@ class principalpaciente extends Component {
             (hoy.getMonth() + 1) +
             "/" +
             hoy.getDate();
-         var miercolessuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
-         var miercolesresultado = new Date(miercolessuma);
+         let miercolessuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
+         let miercolesresultado = new Date(miercolessuma);
          miercolesfecha =
             miercolesresultado.getFullYear() +
             "/" +
             (miercolesresultado.getMonth() + 1) +
             "/" +
             miercolesresultado.getDate();
-         var juevessuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
-         var juevesresultado = new Date(juevessuma);
+         let juevessuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
+         let juevesresultado = new Date(juevessuma);
          juevesfecha =
             juevesresultado.getFullYear() +
             "/" +
             (juevesresultado.getMonth() + 1) +
             "/" +
             juevesresultado.getDate();
-         var viernessuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
-         var viernesresultado = new Date(viernessuma);
+         let viernessuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
+         let viernesresultado = new Date(viernessuma);
          viernesfecha =
             viernesresultado.getFullYear() +
             "/" +
             (viernesresultado.getMonth() + 1) +
             "/" +
             viernesresultado.getDate();
-         var sabadosuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
-         var sabadoresultado = new Date(sabadosuma);
+         let sabadosuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
+         let sabadoresultado = new Date(sabadosuma);
          sabadofecha =
             sabadoresultado.getFullYear() +
             "/" +
             (sabadoresultado.getMonth() + 1) +
             "/" +
             sabadoresultado.getDate();
-         var domingosuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
-         var domingoresultado = new Date(domingosuma);
+         let domingosuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
+         let domingoresultado = new Date(domingosuma);
          domingofecha =
             domingoresultado.getFullYear() +
             "/" +
@@ -178,16 +178,16 @@ class principalpaciente extends Component {
             domingoresultado.getDate();
       }
       if (dia == 3) {
-         var lunessuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
-         var lunesresultado = new Date(lunessuma);
+         let lunessuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
+         let lunesresultado = new Date(lunessuma);
          lunesfecha =
             lunesresultado.getFullYear() +
             "/" +
             (lunesresultado.getMonth() + 1) +
             "/" +
             lunesresultado.getDate();
-         var martessuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
-         var martesresultado = new Date(martessuma);
+         let martessuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
+         let martesresultado = new Date(martessuma);
          martesfecha =
             martesresultado.getFullYear() +
             "/" +
@@ -200,32 +200,32 @@ class principalpaciente extends Component {
             (hoy.getMonth() + 1) +
             "/" +
             hoy.getDate();
-         var juevessuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
-         var juevesresultado = new Date(juevessuma);
+         let juevessuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
+         let juevesresultado = new Date(juevessuma);
          juevesfecha =
             juevesresultado.getFullYear() +
             "/" +
             (juevesresultado.getMonth() + 1) +
             "/" +
             juevesresultado.getDate();
-         var viernessuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
-         var viernesresultado = new Date(viernessuma);
+         let viernessuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
+         let viernesresultado = new Date(viernessuma);
          viernesfecha =
             viernesresultado.getFullYear() +
             "/" +
             (viernesresultado.getMonth() + 1) +
             "/" +
             viernesresultado.getDate();
-         var sabadosuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
-         var sabadoresultado = new Date(sabadosuma);
+         let sabadosuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
+         let sabadoresultado = new Date(sabadosuma);
          sabadofecha =
             sabadoresultado.getFullYear() +
             "/" +
             (sabadoresultado.getMonth() + 1) +
             "/" +
             sabadoresultado.getDate();
-         var domingosuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
-         var domingoresultado = new Date(domingosuma);
+         let domingosuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
+         let domingoresultado = new Date(domingosuma);
          domingofecha =
             domingoresultado.getFullYear() +
             "/" +
@@ -234,24 +234,24 @@ class principalpaciente extends Component {
             domingoresultado.getDate();
       }
       if (dia == 4) {
-         var lunessuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
-         var lunesresultado = new Date(lunessuma);
+         let lunessuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
+         let lunesresultado = new Date(lunessuma);
          lunesfecha =
             lunesresultado.getFullYear() +
             "/" +
             (lunesresultado.getMonth() + 1) +
             "/" +
             lunesresultado.getDate();
-         var martessuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
-         var martesresultado = new Date(martessuma);
+         let martessuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
+         let martesresultado = new Date(martessuma);
          martesfecha =
             martesresultado.getFullYear() +
             "/" +
             (martesresultado.getMonth() + 1) +
             "/" +
             martesresultado.getDate();
-         var miercolessuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
-         var miercolesresultado = new Date(miercolessuma);
+         let miercolessuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
+         let miercolesresultado = new Date(miercolessuma);
          miercolesfecha =
             miercolesresultado.getFullYear() +
             "/" +
@@ -264,24 +264,24 @@ class principalpaciente extends Component {
             (hoy.getMonth() + 1) +
             "/" +
             hoy.getDate();
-         var viernessuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
-         var viernesresultado = new Date(viernessuma);
+         let viernessuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
+         let viernesresultado = new Date(viernessuma);
          viernesfecha =
             viernesresultado.getFullYear() +
             "/" +
             (viernesresultado.getMonth() + 1) +
             "/" +
             viernesresultado.getDate();
-         var sabadosuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
-         var sabadoresultado = new Date(sabadosuma);
+         let sabadosuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
+         let sabadoresultado = new Date(sabadosuma);
          sabadofecha =
             sabadoresultado.getFullYear() +
             "/" +
             (sabadoresultado.getMonth() + 1) +
             "/" +
             sabadoresultado.getDate();
-         var domingosuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
-         var domingoresultado = new Date(domingosuma);
+         let domingosuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
+         let domingoresultado = new Date(domingosuma);
          domingofecha =
             domingoresultado.getFullYear() +
             "/" +
@@ -291,32 +291,32 @@ class principalpaciente extends Component {
       }
 
       if (dia == 5) {
-         var lunessuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
-         var lunesresultado = new Date(lunessuma);
+         let lunessuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
+         let lunesresultado = new Date(lunessuma);
          lunesfecha =
             lunesresultado.getFullYear() +
             "/" +
             (lunesresultado.getMonth() + 1) +
             "/" +
             lunesresultado.getDate();
-         var martessuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
-         var martesresultado = new Date(martessuma);
+         let martessuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
+         let martesresultado = new Date(martessuma);
          martesfecha =
             martesresultado.getFullYear() +
             "/" +
             (martesresultado.getMonth() + 1) +
             "/" +
             martesresultado.getDate();
-         var miercolessuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
-         var miercolesresultado = new Date(miercolessuma);
+         let miercolessuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
+         let miercolesresultado = new Date(miercolessuma);
          miercolesfecha =
             miercolesresultado.getFullYear() +
             "/" +
             (miercolesresultado.getMonth() + 1) +
             "/" +
             miercolesresultado.getDate();
-         var juevessuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
-         var juevesresultado = new Date(juevessuma);
+         let juevessuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
+         let juevesresultado = new Date(juevessuma);
          juevesfecha =
             juevesresultado.getFullYear() +
             "/" +
@@ -329,16 +329,16 @@ class principalpaciente extends Component {
             (hoy.getMonth() + 1) +
             "/" +
             hoy.getDate();
-         var sabadosuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
-         var sabadoresultado = new Date(sabadosuma);
+         let sabadosuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
+         let sabadoresultado = new Date(sabadosuma);
          sabadofecha =
             sabadoresultado.getFullYear() +
             "/" +
             (sabadoresultado.getMonth() + 1) +
             "/" +
             sabadoresultado.getDate();
-         var domingosuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
-         var domingoresultado = new Date(domingosuma);
+         let domingosuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
+         let domingoresultado = new Date(domingosuma);
          domingofecha =
             domingoresultado.getFullYear() +
             "/" +
@@ -348,40 +348,40 @@ class principalpaciente extends Component {
       }
 
       if (dia == 6) {
-         var lunessuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
-         var lunesresultado = new Date(lunessuma);
+         let lunessuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
+         let lunesresultado = new Date(lunessuma);
          lunesfecha =
             lunesresultado.getFullYear() +
             "/" +
             (lunesresultado.getMonth() + 1) +
             "/" +
             lunesresultado.getDate();
-         var martessuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
-         var martesresultado = new Date(martessuma);
+         let martessuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
+         let martesresultado = new Date(martessuma);
          martesfecha =
             martesresultado.getFullYear() +
             "/" +
             (martesresultado.getMonth() + 1) +
             "/" +
             martesresultado.getDate();
-         var miercolessuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
-         var miercolesresultado = new Date(miercolessuma);
+         let miercolessuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
+         let miercolesresultado = new Date(miercolessuma);
          miercolesfecha =
             miercolesresultado.getFullYear() +
             "/" +
             (miercolesresultado.getMonth() + 1) +
             "/" +
             miercolesresultado.getDate();
-         var juevessuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
-         var juevesresultado = new Date(juevessuma);
+         let juevessuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
+         let juevesresultado = new Date(juevessuma);
          juevesfecha =
             juevesresultado.getFullYear() +
             "/" +
             (juevesresultado.getMonth() + 1) +
             "/" +
             juevesresultado.getDate();
-         var viernessuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
-         var viernesresultado = new Date(viernessuma);
+         let viernessuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
+         let viernesresultado = new Date(viernessuma);
          viernesfecha =
             viernesresultado.getFullYear() +
             "/" +
@@ -394,8 +394,8 @@ class principalpaciente extends Component {
             (hoy.getMonth() + 1) +
             "/" +
             hoy.getDate();
-         var domingosuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
-         var domingoresultado = new Date(domingosuma);
+         let domingosuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
+         let domingoresultado = new Date(domingosuma);
          domingofecha =
             domingoresultado.getFullYear() +
             "/" +
@@ -404,48 +404,48 @@ class principalpaciente extends Component {
             domingoresultado.getDate();
       }
       if (dia == 0) {
-         var lunessuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
-         var lunesresultado = new Date(lunessuma);
+         let lunessuma = hoy.getTime() + 1 * 24 * 60 * 60 * 1000;
+         let lunesresultado = new Date(lunessuma);
          lunesfecha =
             lunesresultado.getFullYear() +
             "/" +
             (lunesresultado.getMonth() + 1) +
             "/" +
             lunesresultado.getDate();
-         var martessuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
-         var martesresultado = new Date(martessuma);
+         let martessuma = hoy.getTime() + 2 * 24 * 60 * 60 * 1000;
+         let martesresultado = new Date(martessuma);
          martesfecha =
             martesresultado.getFullYear() +
             "/" +
             (martesresultado.getMonth() + 1) +
             "/" +
             martesresultado.getDate();
-         var miercolessuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
-         var miercolesresultado = new Date(miercolessuma);
+         let miercolessuma = hoy.getTime() + 3 * 24 * 60 * 60 * 1000;
+         let miercolesresultado = new Date(miercolessuma);
          miercolesfecha =
             miercolesresultado.getFullYear() +
             "/" +
             (miercolesresultado.getMonth() + 1) +
             "/" +
             miercolesresultado.getDate();
-         var juevessuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
-         var juevesresultado = new Date(juevessuma);
+         let juevessuma = hoy.getTime() + 4 * 24 * 60 * 60 * 1000;
+         let juevesresultado = new Date(juevessuma);
          juevesfecha =
             juevesresultado.getFullYear() +
             "/" +
             (juevesresultado.getMonth() + 1) +
             "/" +
             juevesresultado.getDate();
-         var viernessuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
-         var viernesresultado = new Date(viernessuma);
+         let viernessuma = hoy.getTime() + 5 * 24 * 60 * 60 * 1000;
+         let viernesresultado = new Date(viernessuma);
          viernesfecha =
             viernesresultado.getFullYear() +
             "/" +
             (viernesresultado.getMonth() + 1) +
             "/" +
             viernesresultado.getDate();
-         var sabadosuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
-         var sabadoresultado = new Date(sabadosuma);
+         let sabadosuma = hoy.getTime() + 6 * 24 * 60 * 60 * 1000;
+         let sabadoresultado = new Date(sabadosuma);
          sabadofecha =
             sabadoresultado.getFullYear() +
             "/" +
@@ -460,7 +460,7 @@ class principalpaciente extends Component {
             hoy.getDate();
       }
 
-      var vacio = (document.getElementById("resultadosbusqueda1").innerHTML =
+      let vacio = (document.getElementById("resultadosbusqueda1").innerHTML =
          "");
       const especialidad = document.getElementById("selectespecialidad").value;
       const estado = document.getElementById("selectestado").value;
@@ -474,33 +474,33 @@ class principalpaciente extends Component {
             .where("Estado", "==", estado)
             .onSnapshot((querySnapshot) => {
                querySnapshot.forEach((doc) => {
-                  var codijo = doc.id;
-                  var nombre1 = doc.data().Nombre;
-                  var apellidopaterno = doc.data().ApellidoPaterno;
-                  var apellidomaterno = doc.data().ApellidoMaterno;
-                  var nombre =
+                  let codijo = doc.id;
+                  let nombre1 = doc.data().Nombre;
+                  let apellidopaterno = doc.data().ApellidoPaterno;
+                  let apellidomaterno = doc.data().ApellidoMaterno;
+                  let nombre =
                      nombre1 + " " + apellidopaterno + " " + apellidomaterno;
-                  var cedula = doc.data().Cedula;
-                  var email = doc.data().Email;
-                  var especialidad = doc.data().Especialidad;
-                  var descripcion = doc.data().Descripcion;
-                  var estadores = doc.data().Estado;
-                  var imagenperfil = doc.data().ImagenPerfil;
-                  var costo = doc.data().Costoconsulta;
-                  var lunes = [];
-                  var martes = [];
-                  var miercoles = [];
-                  var jueves = [];
-                  var viernes = [];
-                  var sabado = [];
-                  var domingo = [];
-                  var lunes1 = [];
-                  var martes1 = [];
-                  var miercoles1 = [];
-                  var jueves1 = [];
-                  var viernes1 = [];
-                  var sabado1 = [];
-                  var domingo1 = [];
+                  let cedula = doc.data().Cedula;
+                  let email = doc.data().Email;
+                  let especialidad = doc.data().Especialidad;
+                  let descripcion = doc.data().Descripcion;
+                  let estadores = doc.data().Estado;
+                  let imagenperfil = doc.data().ImagenPerfil;
+                  let costo = doc.data().Costoconsulta;
+                  let lunes = [];
+                  let martes = [];
+                  let miercoles = [];
+                  let jueves = [];
+                  let viernes = [];
+                  let sabado = [];
+                  let domingo = [];
+                  let lunes1 = [];
+                  let martes1 = [];
+                  let miercoles1 = [];
+                  let jueves1 = [];
+                  let viernes1 = [];
+                  let sabado1 = [];
+                  let domingo1 = [];
 
                   db.collection(
                      "Usuarios/" + doc.id + "/HorariosLinea/Lunes/Lunes1"
@@ -587,58 +587,70 @@ class principalpaciente extends Component {
                            domingo1.push(doc.id);
                         });
                         resultados.innerHTML += `
-                <div class="animate__animated animate__fadeIn contentApricot resultados">
-                <img src="${imagenperfil}" style="width:13rem"/></br>
-                <label>Nombre:Dr.${nombre}</label></br>
-                <label>Cedula:${cedula}</label></br>
-                <label>Email:${email}</label></br>
-                <label>Especialidad:${especialidad}</label></br>
-                <label>Costo de la consulta:$${costo}</label></br>
-                <label>Descripcion:${descripcion}</label></br>
-                <label>Estado:${estadores}</label></br>
-                <label>Lunes-${lunesfecha}:</lable>${lunes
+                        <div class="animate__animated animate__fadeIn contentBlanco resultados">
+        
+                        <div class="foto"><img src=${imagenperfil} /></div>
+        
+                        <div class="infoDoc"> 
+                        <h3>Datos Generales <i class="ri-nurse-fill"></i> </h3>
+                        <label> <b>Nombre:</b> </br> Dr.${nombre}</label>
+                        <label><b>Email:</b> </br> ${email}</label>
+                        <label><b>Especialidad:</b> </br>${especialidad}</label>
+                        <label><b>Costo de la consulta:$</b> </br> ${costo}</label>
+                        <label><b>Estado:</b> </br>${estadores}</label></br>
+                        </div>
+                        
+                        <div class="descripcion">
+                        <label><b>Cedula:</b> </br>${cedula}</label>
+                        <label><b>Descripcion:</b> </br> ${descripcion}</label>
+                        </div> 
+                        
+                        <div class="horarios"> 
+                        <h3>Horarios de atención <i class="ri-time-fill"></i></h3>
+                        <label>Lunes-${lunesfecha}:</lable>${lunes
                            .map(
                               (val, index) =>
-                                 `<a href="/agendarmedico?id=${codijo}&horario=${val}&indice=${lunes1[index]}&dia=Lunes&fecha=${lunesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${lunes1[index]}&dia=Lunes&fecha=${lunesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
-                <label>Martes-${martesfecha}:</lable>${martes
+                           .join(" ")}</br></br>
+                        <label>Martes-${martesfecha}:</lable>${martes
                            .map(
                               (val, index) =>
-                                 `<a href="/agendar?id=${codijo}&horario=${val}&indice=${martes1[index]}&dia=Martes&fecha=${martesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${martes1[index]}&dia=Martes&fecha=${martesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
-                <label>Miercoles-${miercolesfecha}:</lable>${miercoles
+                           .join(" ")}</br></br>
+                        <label>Miercoles-${miercolesfecha}:</lable>${miercoles
                            .map(
                               (val, index) =>
-                                 `<a href="/agendar?id=${codijo}&horario=${val}&indice=${miercoles1[index]}&dia=Mircoles&fecha=${miercolesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${miercoles1[index]}&dia=Mircoles&fecha=${miercolesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
-                <label>Jueves-${juevesfecha}:</lable>${jueves
+                           .join(" ")}</br></br>
+                        <label>Jueves-${juevesfecha}:</lable>${jueves
                            .map(
                               (val, index) =>
-                                 `<a href="/agendar?id=${codijo}&horario=${val}&indice=${jueves1[index]}&dia=Jueves&fecha=${juevesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${jueves1[index]}&dia=Jueves&fecha=${juevesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
-                <label>Viernes-${viernesfecha}:</lable>${viernes
+                           .join(" ")}</br></br>
+                        <label>Viernes-${viernesfecha}:</lable>${viernes
                            .map(
                               (val, index) =>
-                                 `<a href="/agendar?id=${codijo}&horario=${val}&indice=${viernes1[index]}&dia=Viernes&fecha=${viernesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${viernes1[index]}&dia=Viernes&fecha=${viernesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
-                <label>Sabado-${sabadofecha}:</lable>${sabado
+                           .join(" ")}</br></br>
+                        <label>Sabado-${sabadofecha}:</lable>${sabado
                            .map(
                               (val, index) =>
-                                 `<a href="/agendar?id=${codijo}&horario=${val}&indice=${sabado1[index]}&dia=Sabado&fecha=${sabadofecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${sabado1[index]}&dia=Sabado&fecha=${sabadofecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
-                <label>Domingo-${domingofecha}:</lable>${domingo
+                           .join(" ")}</br></br>
+                        <label>Domingo-${domingofecha}:</lable>${domingo
                            .map(
                               (val, index) =>
-                                 `<a href="/agendar?id=${codijo}&horario=${val}&indice=${domingo1[index]}&dia=Domigo&fecha=${domingofecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${domingo1[index]}&dia=Domigo&fecha=${domingofecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
-                           </div>`;
+                           .join(" ")}  
+                                   </div>   
+                         </div>`;
                      });
                });
             });
@@ -649,33 +661,33 @@ class principalpaciente extends Component {
             .where("Estado", "==", estado)
             .onSnapshot((querySnapshot) => {
                querySnapshot.forEach((doc) => {
-                  var codijo = doc.id;
-                  var nombre1 = doc.data().Nombre;
-                  var apellidopaterno = doc.data().ApellidoPaterno;
-                  var apellidomaterno = doc.data().ApellidoMaterno;
-                  var nombre =
+                  let codijo = doc.id;
+                  let nombre1 = doc.data().Nombre;
+                  let apellidopaterno = doc.data().ApellidoPaterno;
+                  let apellidomaterno = doc.data().ApellidoMaterno;
+                  let nombre =
                      nombre1 + " " + apellidopaterno + " " + apellidomaterno;
-                  var cedula = doc.data().Cedula;
-                  var email = doc.data().Email;
-                  var especialidad = doc.data().Especialidad;
-                  var descripcion = doc.data().Descripcion;
-                  var estadores = doc.data().Estado;
-                  var imagenperfil = doc.data().ImagenPerfil;
-                  var costo = doc.data().Costoconsulta;
-                  var lunes = [];
-                  var martes = [];
-                  var miercoles = [];
-                  var jueves = [];
-                  var viernes = [];
-                  var sabado = [];
-                  var domingo = [];
-                  var lunes1 = [];
-                  var martes1 = [];
-                  var miercoles1 = [];
-                  var jueves1 = [];
-                  var viernes1 = [];
-                  var sabado1 = [];
-                  var domingo1 = [];
+                  let cedula = doc.data().Cedula;
+                  let email = doc.data().Email;
+                  let especialidad = doc.data().Especialidad;
+                  let descripcion = doc.data().Descripcion;
+                  let estadores = doc.data().Estado;
+                  let imagenperfil = doc.data().ImagenPerfil;
+                  let costo = doc.data().Costoconsulta;
+                  let lunes = [];
+                  let martes = [];
+                  let miercoles = [];
+                  let jueves = [];
+                  let viernes = [];
+                  let sabado = [];
+                  let domingo = [];
+                  let lunes1 = [];
+                  let martes1 = [];
+                  let miercoles1 = [];
+                  let jueves1 = [];
+                  let viernes1 = [];
+                  let sabado1 = [];
+                  let domingo1 = [];
 
                   db.collection(
                      "Usuarios/" + doc.id + "/HorariosPresencial/Lunes/Lunes1"
@@ -773,58 +785,70 @@ class principalpaciente extends Component {
                            domingo1.push(doc.id);
                         });
                         resultados.innerHTML += `
-               <div class="animate__animated animate__fadeIn contentApricot resultados">
-                <img src=${imagenperfil} style="width:13rem"/></br>
-                <label>Nombre:Dr.${nombre}</label></br>
-                <label>Cedula:${cedula}</label></br>
-                <label>Email:${email}</label></br>
-                <label>Especialidad:${especialidad}</label></br>
-                <label>Costo de la consulta:$${costo}</label></br>
-                <label>Descripcion:${descripcion}</label></br>
-                <label>Estado:${estadores}</label></br>
-                <label>Lunes-${lunesfecha}:</lable>${lunes
+                        <div class="animate__animated animate__fadeIn contentBlanco resultados">
+        
+                        <div class="foto"><img src=${imagenperfil} /></div>
+        
+                        <div class="infoDoc"> 
+                        <h3>Datos Generales <i class="ri-nurse-fill"></i> </h3>
+                        <label> <b>Nombre:</b> </br> Dr.${nombre}</label>
+                        <label><b>Email:</b> </br> ${email}</label>
+                        <label><b>Especialidad:</b> </br>${especialidad}</label>
+                        <label><b>Costo de la consulta:$</b> </br> ${costo}</label>
+                        <label><b>Estado:</b> </br>${estadores}</label></br>
+                        </div>
+                        
+                        <div class="descripcion">
+                        <label><b>Cedula:</b> </br>${cedula}</label>
+                        <label><b>Descripcion:</b> </br> ${descripcion}</label>
+                        </div> 
+                        
+                        <div class="horarios"> 
+                        <h3>Horarios de atención <i class="ri-time-fill"></i></h3>
+                        <label>Lunes-${lunesfecha}:</lable>${lunes
                            .map(
                               (val, index) =>
-                                 `<a href="/agendar?id=${codijo}&horario=${val}&indice=${lunes1[index]}&dia=Lunes&fecha=${lunesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${lunes1[index]}&dia=Lunes&fecha=${lunesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
-                <label>Martes-${martesfecha}:</lable>${martes
+                           .join(" ")}</br></br>
+                        <label>Martes-${martesfecha}:</lable>${martes
                            .map(
                               (val, index) =>
-                                 `<a href="/agendar?id=${codijo}&horario=${val}&indice=${martes1[index]}&dia=Martes&fecha=${martesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${martes1[index]}&dia=Martes&fecha=${martesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
-                <label>Miercoles-${miercolesfecha}:</lable>${miercoles
+                           .join(" ")}</br></br>
+                        <label>Miercoles-${miercolesfecha}:</lable>${miercoles
                            .map(
                               (val, index) =>
-                                 `<a href="/agendar?id=${codijo}&horario=${val}&indice=${miercoles1[index]}&dia=Miercoles&fecha=${miercolesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${miercoles1[index]}&dia=Mircoles&fecha=${miercolesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
-                <label>Jueves-${juevesfecha}:</lable>${jueves
+                           .join(" ")}</br></br>
+                        <label>Jueves-${juevesfecha}:</lable>${jueves
                            .map(
                               (val, index) =>
-                                 `<a href="/agendar?id=${codijo}&horario=${val}&indice=${jueves1[index]}&dia=Jueves&fecha=${juevesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${jueves1[index]}&dia=Jueves&fecha=${juevesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
-                <label>Viernes-${viernesfecha}:</lable>${viernes
+                           .join(" ")}</br></br>
+                        <label>Viernes-${viernesfecha}:</lable>${viernes
                            .map(
                               (val, index) =>
-                                 `<a href="/agendar?id=${codijo}&horario=${val}&indice=${viernes1[index]}&dia=Viernes&fecha=${viernesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${viernes1[index]}&dia=Viernes&fecha=${viernesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
-                <label>Sabado-${sabadofecha}:</lable>${sabado
+                           .join(" ")}</br></br>
+                        <label>Sabado-${sabadofecha}:</lable>${sabado
                            .map(
                               (val, index) =>
-                                 `<a href="/agendar?id=${codijo}&horario=${val}&indice=${sabado1[index]}&dia=Sabado&fecha=${sabadofecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${sabado1[index]}&dia=Sabado&fecha=${sabadofecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
-                <label>Domingo-${domingofecha}:</lable>${domingo
+                           .join(" ")}</br></br>
+                        <label>Domingo-${domingofecha}:</lable>${domingo
                            .map(
                               (val, index) =>
-                                 `<a href="/agendar?id=${codijo}&horario=${val}&indice=${domingo1[index]}&dia=Domingo&fecha=${domingofecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${domingo1[index]}&dia=Domigo&fecha=${domingofecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
-                           .join(" ")}</br>
-                           </div>`;
+                           .join(" ")}  
+                                   </div>   
+                         </div>`;
                      });
                });
             });
@@ -832,16 +856,16 @@ class principalpaciente extends Component {
    }
 
    opinar() {
-      var opinion = document.getElementById("opinar").value;
+      let opinion = document.getElementById("opinar").value;
       if (opinion != "") {
          firebase.auth().onAuthStateChanged((user) => {
-            var uid = user.uid;
+            let uid = user.uid;
             db.collection("Usuarios")
                .doc(uid)
                .onSnapshot((doc) => {
-                  var imagen = doc.data().ImagenPerfil;
-                  var email = doc.data().Email;
-                  var nombre =
+                  let imagen = doc.data().ImagenPerfil;
+                  let email = doc.data().Email;
+                  let nombre =
                      doc.data().Nombre +
                      " " +
                      doc.data().ApellidoPaterno +

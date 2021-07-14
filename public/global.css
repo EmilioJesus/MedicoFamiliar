@@ -494,11 +494,21 @@ body::-webkit-scrollbar-thumb {
 .contentModificar {
    margin: 0 auto;
    max-width: 25rem;
-   height: 40rem;
+   height: auto;
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: space-around;
+}
+
+/**
+* ! CITAS
+*/
+
+.tituloCitas {
+   padding: 0.8rem 0;
+   color: var(--colormorado);
+   font-size: 1.4rem;
 }
 
 /** 

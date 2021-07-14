@@ -3,7 +3,7 @@ import db from "./firebase_config";
 import firebase from "firebase/app";
 import "firebase/auth";
 import logo from "./imagenes/perfil_predeterminada.jpg";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import MenuDoctor from "./Components/Menu/MenuDoctor";
 
 class perfil_doctor extends Component {
    //fincion para ejecutar una funcion en cuanto se cargue la pagina
@@ -462,12 +462,7 @@ class perfil_doctor extends Component {
       return (
          <div onLoad={this.inicio}>
             <div className="App" id="datos">
-               <div className="menu">
-                  <a href="/principaldoctor">Citas</a>
-                  <a href="" onClick={this.cerrar_sesion}>
-                     Cerrar Sesion
-                  </a>
-               </div>
+               <MenuDoctor cerrar_sesion={this.cerrar_sesion} />
                <h1>Perfil Doctor</h1>
                <div style={{ width: "13rem", margin: "0 auto" }}>
                   <img src="" id="imagenperfil" />
