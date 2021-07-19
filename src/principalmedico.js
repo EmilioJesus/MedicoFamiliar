@@ -3,7 +3,6 @@ import db from "./firebase_config";
 import firebase from "firebase/app";
 import "firebase/auth";
 import ContenedorCard from "./Components/Cards/ContentCard";
-import ContenedorTestimonial from "./Components/Cards/ContenedorTestimonial";
 import Menu from "./Components/Menu/Menu";
 const img = require.context("./imagenes", true);
 class principalmedico extends Component {
@@ -451,7 +450,8 @@ class principalmedico extends Component {
             hoy.getDate();
       }
 
-      let vacio = (document.getElementById("resultadosbusqueda1").innerHTML ="");
+      let vacio = (document.getElementById("resultadosbusqueda1").innerHTML =
+         "");
       const especialidad = document.getElementById("selectespecialidad").value;
       const estado = document.getElementById("selectestado").value;
       const consultatipo = document.getElementById("selecconsultatipo").value;
@@ -873,24 +873,27 @@ class principalmedico extends Component {
    }
 
    //se mandan atraer las opiniones a la base de datos
-   opiniones()
-   {
-      db.collection("Administrador/Usuarios/Opiniones").get().then((querySnapshot) => {
-         querySnapshot.forEach((doc) => {
-            //div donde se mandan a imprimir 
-             var opiniones=document.getElementById('opiniones');
-             opiniones.innerHTML+= `
-             <div className='contenedor'>
-             <section className='contenedorCardTest'>
-               <div class="foto"><img src=${doc.data().Imagenperfil} /></div>
-               <label>${doc.data().Nombre}</label><br/>
-               <label>${doc.data().Email}</label><br/>
-               <label>${doc.data().Opinion}</label><br/><br/>
-             </section>
-            </div>
-             `
+   opiniones() {
+      db.collection("Administrador/Usuarios/Opiniones")
+         .get()
+         .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+               //div donde se mandan a imprimir
+               var opiniones = document.getElementById("opiniones");
+               opiniones.innerHTML += `
+               
+               <div class="contentTest">
+               <div  >
+               <img class="imgTestimonial" src=${doc.data().Imagenperfil} />
+               </div>
+
+               <div class="textTestimonial">
+               <h3>${doc.data().Nombre}</h3>
+               <p>${doc.data().Opinion}</p>
+               </div>
+             `;
+            });
          });
-     });
    }
 
    //html que se muestra en la pagina
@@ -960,13 +963,11 @@ class principalmedico extends Component {
                </h1>
                <ContenedorCard />
             </div>
-            <div>
-               <ContenedorTestimonial />
-            </div>
 
-            <div id="opiniones">
-               
-            </div>
+            <h1 className="titulo">
+               ¿Qué opinan <br /> de nosotros? <i className="fa fa-users"></i>
+            </h1>
+            <div className="contenedor contenedorCardTest" id="opiniones"></div>
          </div>
       );
    }

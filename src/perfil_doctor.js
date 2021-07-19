@@ -324,46 +324,68 @@ class perfil_doctor extends Component {
 
                horariopresencial.innerHTML += `
                 <h3>Horarios Presencial</h3> 
-                <label className="tituloTabla">Lunes:</lable>${lunes
+                <label className="tituloTabla">Lunes:</label>${lunes
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
-                <label className="tituloTabla">Martes:</lable>${martes
+                <label className="tituloTabla">Martes:</label>${martes
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
-                <label className="tituloTabla">Miercoles:</lable>${miercoles
+                <label className="tituloTabla">Miercoles:</label>${miercoles
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
-                <label className="tituloTabla">Jueves:</lable>${jueves
+                <label className="tituloTabla">Jueves:</label>${jueves
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
-                <label className="tituloTabla">Viernes:</lable>${viernes
+                <label className="tituloTabla">Viernes:</label>${viernes
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
-                <label className="tituloTabla">Sabado:</lable>${sabado
+                <label className="tituloTabla">Sabado:</label>${sabado
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
-                <label className="tituloTabla">Domingo:</lable>${domingo
-                   .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
-                <label>Lunes:</lable>${lunes
-                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Lunes&codijo=${lunes1[index]}&tipocita=Presencial&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${lunes1[index]}&tipocita=Presencial">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
+                <label className="tituloTabla">Domingo:</label>${domingo.map(
+                   (val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                )}
+                <label>Lunes:</label>${lunes
+                   .map(
+                      (val, index) =>
+                         `<a>${val}<a href="/editar_horario?dia=Lunes&codijo=${lunes1[index]}&tipocita=Presencial&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${lunes1[index]}&tipocita=Presencial">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`
+                   )
+                   .join(" ")}
+                <label>Martes:</label>${martes
+                   .map(
+                      (val, index) =>
+                         `<a>${val}<a href="/editar_horario?dia=Martes&codijo=${martes1[index]}&tipocita=Presencial&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${martes1[index]}&tipocita=Presencial">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`
+                   )
+                   .join(" ")}
+                <label>Miercoles:</label>${miercoles
+                   .map(
+                      (val, index) =>
+                         `<a>${val}<a href="/editar_horario?dia=Miercoles&codijo=${miercoles1[index]}&tipocita=Presencial&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${miercoles1[index]}&tipocita=Presencial">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`
+                   )
                    .join(" ")}</br>
-                <label>Martes:</lable>${martes
-                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Martes&codijo=${martes1[index]}&tipocita=Presencial&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${martes1[index]}&tipocita=Presencial">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
+                <label>Jueves:</label>${jueves
+                   .map(
+                      (val, index) =>
+                         `<a>${val}<a href="/editar_horario?dia=Jueves&codijo=${jueves1[index]}&tipocita=Presencial&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${jueves1[index]}&tipocita=Presencial">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`
+                   )
                    .join(" ")}</br>
-                <label>Miercoles:</lable>${miercoles
-                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Miercoles&codijo=${miercoles1[index]}&tipocita=Presencial&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${miercoles1[index]}&tipocita=Presencial">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
+                <label>Viernes:</label>${viernes
+                   .map(
+                      (val, index) =>
+                         `<a>${val}<a href="/editar_horario?dia=Viernes&codijo=${viernes1[index]}&tipocita=Presencial&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${viernes1[index]}&tipocita=Presencial">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`
+                   )
                    .join(" ")}</br>
-                <label>Jueves:</lable>${jueves
-                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Jueves&codijo=${jueves1[index]}&tipocita=Presencial&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${jueves1[index]}&tipocita=Presencial">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
+                <label>Sabado:</label>${sabado
+                   .map(
+                      (val, index) =>
+                         `<a>${val}<a href="/editar_horario?dia=Sabado&codijo=${sabado1[index]}&tipocita=Presencial&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${sabado1[index]}&tipocita=Presencial">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`
+                   )
                    .join(" ")}</br>
-                <label>Viernes:</lable>${viernes
-                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Viernes&codijo=${viernes1[index]}&tipocita=Presencial&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${viernes1[index]}&tipocita=Presencial">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
-                   .join(" ")}</br>
-                <label>Sabado:</lable>${sabado
-                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Sabado&codijo=${sabado1[index]}&tipocita=Presencial&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${sabado1[index]}&tipocita=Presencial">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
-                   .join(" ")}</br>
-                <label>Domingo:</lable>${domingo
-                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Domingo&codijo=${domingo1[index]}&tipocita=Presencial&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${domingo1[index]}&tipocita=Presencial">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
+                <label>Domingo:</label>${domingo
+                   .map(
+                      (val, index) =>
+                         `<a>${val}<a href="/editar_horario?dia=Domingo&codijo=${domingo1[index]}&tipocita=Presencial&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${domingo1[index]}&tipocita=Presencial">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`
+                   )
                    .join(" ")}</br>
                 `;
             });
@@ -397,7 +419,6 @@ class perfil_doctor extends Component {
                querySnapshot.forEach((doc) => {
                   lunes.push(doc.data().hora);
                   lunes1.push(doc.id);
-
                });
             });
 
@@ -474,105 +495,158 @@ class perfil_doctor extends Component {
 
                horariolinea.innerHTML += `
                 <h3>Horarios linea</h3> 
-                <label className="tituloTabla">Lunes:</lable>${lunes
+                <label className="tituloTabla">Lunes:</label>
+                ${lunes
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
-                <label className="tituloTabla">Martes:</lable>${martes
+                <label className="tituloTabla">Martes:</label>${martes
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
-                <label className="tituloTabla">Miercoles:</lable>${miercoles
+                <label className="tituloTabla">Miercoles:</label>${miercoles
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
-                <label className="tituloTabla">Jueves:</lable>${jueves
+                <label className="tituloTabla">Jueves:</label>${jueves
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
-                <label className="tituloTabla">Viernes:</lable>${viernes
+                <label className="tituloTabla">Viernes:</label>${viernes
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
-                <label className="tituloTabla">Sabado:</lable>${sabado
+                <label className="tituloTabla">Sabado:</label>${sabado
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
-                <label className="tituloTabla">Domingo:</lable>${domingo
-                   .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
-                <label>Lunes:</lable>${lunes
-                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Lunes&codijo=${lunes1[index]}&tipocita=Linea&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${lunes1[index]}&tipocita=Linea">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
+                <label className="tituloTabla">Domingo:</label>${domingo.map(
+                   (val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                )}
+                <label>Lunes:</label>${lunes
+                   .map(
+                      (val, index) =>
+                         `<a>${val}<a href="/editar_horario?dia=Lunes&codijo=${lunes1[index]}&tipocita=Linea&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${lunes1[index]}&tipocita=Linea">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`
+                   )
                    .join(" ")}</br>
-                <label>Martes:</lable>${martes
-                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Martes&codijo=${martes1[index]}&tipocita=Linea&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${martes1[index]}&tipocita=Linea">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
+                <label>Martes:</label>${martes
+                   .map(
+                      (val, index) =>
+                         `<a>${val}<a href="/editar_horario?dia=Martes&codijo=${martes1[index]}&tipocita=Linea&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${martes1[index]}&tipocita=Linea">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`
+                   )
                    .join(" ")}</br>
-                <label>Miercoles:</lable>${miercoles
-                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Miercoles&codijo=${miercoles1[index]}&tipocita=Linea&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${miercoles1[index]}&tipocita=Linea">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
+                <label>Miercoles:</label>${miercoles
+                   .map(
+                      (val, index) =>
+                         `<a>${val}<a href="/editar_horario?dia=Miercoles&codijo=${miercoles1[index]}&tipocita=Linea&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${miercoles1[index]}&tipocita=Linea">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`
+                   )
                    .join(" ")}</br>
-                <label>Jueves:</lable>${jueves
-                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Jueves&codijo=${jueves1[index]}&tipocita=Linea&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${jueves1[index]}&tipocita=Linea">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
+                <label>Jueves:</label>${jueves
+                   .map(
+                      (val, index) =>
+                         `<a>${val}<a href="/editar_horario?dia=Jueves&codijo=${jueves1[index]}&tipocita=Linea&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${jueves1[index]}&tipocita=Linea">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`
+                   )
                    .join(" ")}</br>
-                <label>Viernes:</lable>${viernes
-                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Viernes&codijo=${viernes1[index]}&tipocita=Linea&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${viernes1[index]}&tipocita=Linea">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
+                <label>Viernes:</label>${viernes
+                   .map(
+                      (val, index) =>
+                         `<a>${val}<a href="/editar_horario?dia=Viernes&codijo=${viernes1[index]}&tipocita=Linea&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${viernes1[index]}&tipocita=Linea">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`
+                   )
                    .join(" ")}</br>
-                <label>Sabado:</lable>${sabado
-                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Sabado&codijo=${sabado1[index]}&tipocita=Linea&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${sabado1[index]}&tipocita=Linea">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
+                <label>Sabado:</label>${sabado
+                   .map(
+                      (val, index) =>
+                         `<a>${val}<a href="/editar_horario?dia=Sabado&codijo=${sabado1[index]}&tipocita=Linea&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${sabado1[index]}&tipocita=Linea">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`
+                   )
                    .join(" ")}</br>
-                <label>Domingo:</lable>${domingo
-                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Domingo&codijo=${domingo1[index]}&tipocita=Linea&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${domingo1[index]}&tipocita=Linea">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
+                <label>Domingo:</label>${domingo
+                   .map(
+                      (val, index) =>
+                         `<a>${val}<a href="/editar_horario?dia=Domingo&codijo=${domingo1[index]}&tipocita=Linea&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${domingo1[index]}&tipocita=Linea">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`
+                   )
                    .join(" ")}</br>
                 `;
             });
       });
    }
 
-   eliminarhorario()
-   {
+   eliminarhorario() {
       firebase.auth().onAuthStateChanged((user) => {
-      var uid = user.uid;
-      var queryString = window.location.search;
-      var urlParams = new URLSearchParams(queryString);
-      var codijoeliminar = urlParams.get('codijoeliminar');
-      var dia = urlParams.get('dia');
-      var tipocita = urlParams.get('tipocita');
-      if(tipocita!=null)
-      {
-      if(tipocita=="Linea")
-      {
-         db.collection("Usuarios/"+uid+"/HorariosLinea/"+dia+"/"+dia+"1").doc(codijoeliminar).delete().then(() => {
-            console.log("Document successfully deleted!");
-            db.collection("Usuarios/"+uid+"/HorariosLineaDoctor/"+dia+"/"+dia+"1").doc(codijoeliminar).delete().then(() => {
-               console.log("Document successfully deleted!");
-               window.location.href = "/perfil_doctor";
-           }).catch((error) => {
-               console.error("Error removing document: ", error);
-           });
-   
-        }).catch((error) => {
-            console.error("Error removing document: ", error);
-        });
-
-      }else
-      {
-         db.collection("Usuarios/"+uid+"/HorariosPresencial/"+dia+"/"+dia+"1").doc(codijoeliminar).delete().then(() => {
-            console.log("Document successfully deleted!");
-            db.collection("Usuarios/"+uid+"/HorariosPresencialDoctor/"+dia+"/"+dia+"1").doc(codijoeliminar).delete().then(() => {
-               console.log("Document successfully deleted!");
-               window.location.href = "/perfil_doctor";
-           }).catch((error) => {
-               console.error("Error removing document: ", error);
-           });
-   
-        }).catch((error) => {
-            console.error("Error removing document: ", error);
-        });
-
-      }
+         var uid = user.uid;
+         var queryString = window.location.search;
+         var urlParams = new URLSearchParams(queryString);
+         var codijoeliminar = urlParams.get("codijoeliminar");
+         var dia = urlParams.get("dia");
+         var tipocita = urlParams.get("tipocita");
+         if (tipocita != null) {
+            if (tipocita == "Linea") {
+               db.collection(
+                  "Usuarios/" + uid + "/HorariosLinea/" + dia + "/" + dia + "1"
+               )
+                  .doc(codijoeliminar)
+                  .delete()
+                  .then(() => {
+                     console.log("Document successfully deleted!");
+                     db.collection(
+                        "Usuarios/" +
+                           uid +
+                           "/HorariosLineaDoctor/" +
+                           dia +
+                           "/" +
+                           dia +
+                           "1"
+                     )
+                        .doc(codijoeliminar)
+                        .delete()
+                        .then(() => {
+                           console.log("Document successfully deleted!");
+                           window.location.href = "/perfil_doctor";
+                        })
+                        .catch((error) => {
+                           console.error("Error removing document: ", error);
+                        });
+                  })
+                  .catch((error) => {
+                     console.error("Error removing document: ", error);
+                  });
+            } else {
+               db.collection(
+                  "Usuarios/" +
+                     uid +
+                     "/HorariosPresencial/" +
+                     dia +
+                     "/" +
+                     dia +
+                     "1"
+               )
+                  .doc(codijoeliminar)
+                  .delete()
+                  .then(() => {
+                     console.log("Document successfully deleted!");
+                     db.collection(
+                        "Usuarios/" +
+                           uid +
+                           "/HorariosPresencialDoctor/" +
+                           dia +
+                           "/" +
+                           dia +
+                           "1"
+                     )
+                        .doc(codijoeliminar)
+                        .delete()
+                        .then(() => {
+                           console.log("Document successfully deleted!");
+                           window.location.href = "/perfil_doctor";
+                        })
+                        .catch((error) => {
+                           console.error("Error removing document: ", error);
+                        });
+                  })
+                  .catch((error) => {
+                     console.error("Error removing document: ", error);
+                  });
+            }
+         }
+      });
    }
-      
-      })
+
+   cancelar() {
+      window.location.href = "/perfil_doctor";
    }
-
-   cancelar()
-   {
-      window.location.href ='/perfil_doctor';
-
-   }
-
 
    //html que se muestra en la pagina
    render() {
@@ -705,47 +779,13 @@ class perfil_doctor extends Component {
                   >
                      Modificar
                   </button>
+                  <button
+                     className="btn-principal seconbtn"
+                     onClick={this.cancelar}
+                  >
+                     Cancelar
+                  </button>
                </div>
-               <label>Agrega imagen de perfil</label>
-               <br />
-               <input type="file" id="file"></input>
-               <br />
-               <label>Nombres</label>
-               <br />
-               <input type="text" id="nombremodificar"></input>
-               <br />
-               <label>Apellido Paterno</label>
-               <br />
-               <input type="text" id="apellidoPmodificar"></input>
-               <br />
-               <label>Apellido Materno</label>
-               <br />
-               <input type="text" id="apellidoMmodificar"></input>
-               <br />
-               <label>Costo de la consulta</label>
-               <br />
-               <input type="number" id="costomodificar"></input>
-               <br />
-               <label>Telefono</label>
-               <br />
-               <input type="text" id="telefonomodificar"></input>
-               <br />
-               <label>Descripcion</label>
-               <br />
-               <input type="text" id="descripcionmodificar"></input>
-               <br />
-               <input
-                  type="button"
-                  value="Modificar"
-                  onClick={this.editar1}
-               ></input><br/>
-                 <input
-                  type="button"
-                  id=""
-                  onClick={this.cancelar}
-                  value="Cancelar"
-               ></input>
-               <br />
             </div>
             <div id="pago" className="contenedor contentBlanco">
                <h2 className="titulo">
