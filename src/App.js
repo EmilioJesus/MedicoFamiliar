@@ -19,12 +19,16 @@ import Principaldoctor from "./principaldoctor";
 import Medicoprincipal from "./principalmedico";
 import Agendarmedico from "./agendarmedico";
 import Footer from "./Components/Footer/Footer";
+import Editarhorario from "./editar_horario";
 //rutas para poder ingresar a los documentos
 
 function App() {
    return (
       <Router>
          <Switch>
+         <Route path="/editar_horario">
+               <Editarhorario />
+            </Route>
             <Route path="/agendarmedico">
                <Agendarmedico />
             </Route>

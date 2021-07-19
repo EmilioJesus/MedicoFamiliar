@@ -10,6 +10,7 @@ class perfil_doctor extends Component {
       this.inicio();
       this.mostrar_linea();
       this.mostrar_presencial();
+      this.eliminarhorario();
    }
 
    //si es usuario quiere entrar sin estar logeado esta funcion lo manda al login principal
@@ -154,13 +155,9 @@ class perfil_doctor extends Component {
       firebase.auth().onAuthStateChanged((user) => {
          var uid = user.uid;
          var horainicio = document.getElementById("horainicio").value;
-         alert(horainicio);
          var horatermino = document.getElementById("horatermino").value;
-         alert(horatermino);
          var tipo = document.getElementById("tipo").value;
-         alert(tipo);
          var dia = document.getElementById("dia").value;
-         alert(dia);
          var horacita = horainicio + "-" + horatermino;
          if (horainicio != "" && horatermino != "") {
             if (tipo == "En linea") {
@@ -234,6 +231,13 @@ class perfil_doctor extends Component {
          var viernes = [];
          var sabado = [];
          var domingo = [];
+         var lunes1 = [];
+         var martes1 = [];
+         var miercoles1 = [];
+         var jueves1 = [];
+         var viernes1 = [];
+         var sabado1 = [];
+         var domingo1 = [];
 
          db.collection(
             "Usuarios/" + uid + "/HorariosPresencialDoctor/Lunes/Lunes1"
@@ -243,6 +247,7 @@ class perfil_doctor extends Component {
             .then((querySnapshot) => {
                querySnapshot.forEach((doc) => {
                   lunes.push(doc.data().hora);
+                  lunes1.push(doc.id);
                });
             });
 
@@ -254,6 +259,7 @@ class perfil_doctor extends Component {
             .then((querySnapshot) => {
                querySnapshot.forEach((doc) => {
                   martes.push(doc.data().hora);
+                  martes1.push(doc.id);
                });
             });
 
@@ -265,6 +271,7 @@ class perfil_doctor extends Component {
             .then((querySnapshot) => {
                querySnapshot.forEach((doc) => {
                   miercoles.push(doc.data().hora);
+                  miercoles1.push(doc.id);
                });
             });
 
@@ -276,6 +283,7 @@ class perfil_doctor extends Component {
             .then((querySnapshot) => {
                querySnapshot.forEach((doc) => {
                   jueves.push(doc.data().hora);
+                  jueves1.push(doc.id);
                });
             });
 
@@ -287,6 +295,7 @@ class perfil_doctor extends Component {
             .then((querySnapshot) => {
                querySnapshot.forEach((doc) => {
                   viernes.push(doc.data().hora);
+                  viernes1.push(doc.id);
                });
             });
 
@@ -298,6 +307,7 @@ class perfil_doctor extends Component {
             .then((querySnapshot) => {
                querySnapshot.forEach((doc) => {
                   sabado.push(doc.data().hora);
+                  sabado1.push(doc.id);
                });
             });
 
@@ -309,6 +319,7 @@ class perfil_doctor extends Component {
             .then((querySnapshot) => {
                querySnapshot.forEach((doc) => {
                   domingo.push(doc.data().hora);
+                  domingo1.push(doc.id);
                });
 
                horariopresencial.innerHTML += `
@@ -333,6 +344,26 @@ class perfil_doctor extends Component {
                    .join(" ")}</br>
                 <label className="tituloTabla">Domingo:</lable>${domingo
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
+                <label>Lunes:</lable>${lunes
+                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Lunes&codijo=${lunes1[index]}&tipocita=Presencial&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${lunes1[index]}&tipocita=Presencial">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
+                   .join(" ")}</br>
+                <label>Martes:</lable>${martes
+                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Martes&codijo=${martes1[index]}&tipocita=Presencial&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${martes1[index]}&tipocita=Presencial">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
+                   .join(" ")}</br>
+                <label>Miercoles:</lable>${miercoles
+                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Miercoles&codijo=${miercoles1[index]}&tipocita=Presencial&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${miercoles1[index]}&tipocita=Presencial">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
+                   .join(" ")}</br>
+                <label>Jueves:</lable>${jueves
+                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Jueves&codijo=${jueves1[index]}&tipocita=Presencial&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${jueves1[index]}&tipocita=Presencial">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
+                   .join(" ")}</br>
+                <label>Viernes:</lable>${viernes
+                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Viernes&codijo=${viernes1[index]}&tipocita=Presencial&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${viernes1[index]}&tipocita=Presencial">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
+                   .join(" ")}</br>
+                <label>Sabado:</lable>${sabado
+                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Sabado&codijo=${sabado1[index]}&tipocita=Presencial&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${sabado1[index]}&tipocita=Presencial">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
+                   .join(" ")}</br>
+                <label>Domingo:</lable>${domingo
+                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Domingo&codijo=${domingo1[index]}&tipocita=Presencial&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${domingo1[index]}&tipocita=Presencial">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
                 `;
             });
@@ -351,6 +382,13 @@ class perfil_doctor extends Component {
          var viernes = [];
          var sabado = [];
          var domingo = [];
+         var lunes1 = [];
+         var martes1 = [];
+         var miercoles1 = [];
+         var jueves1 = [];
+         var viernes1 = [];
+         var sabado1 = [];
+         var domingo1 = [];
 
          db.collection("Usuarios/" + uid + "/HorariosLineaDoctor/Lunes/Lunes1")
             .orderBy("timestamp", "asc")
@@ -358,6 +396,8 @@ class perfil_doctor extends Component {
             .then((querySnapshot) => {
                querySnapshot.forEach((doc) => {
                   lunes.push(doc.data().hora);
+                  lunes1.push(doc.id);
+
                });
             });
 
@@ -369,6 +409,7 @@ class perfil_doctor extends Component {
             .then((querySnapshot) => {
                querySnapshot.forEach((doc) => {
                   martes.push(doc.data().hora);
+                  martes1.push(doc.id);
                });
             });
 
@@ -380,6 +421,7 @@ class perfil_doctor extends Component {
             .then((querySnapshot) => {
                querySnapshot.forEach((doc) => {
                   miercoles.push(doc.data().hora);
+                  miercoles1.push(doc.id);
                });
             });
 
@@ -391,6 +433,7 @@ class perfil_doctor extends Component {
             .then((querySnapshot) => {
                querySnapshot.forEach((doc) => {
                   jueves.push(doc.data().hora);
+                  jueves1.push(doc.id);
                });
             });
 
@@ -402,6 +445,7 @@ class perfil_doctor extends Component {
             .then((querySnapshot) => {
                querySnapshot.forEach((doc) => {
                   viernes.push(doc.data().hora);
+                  viernes1.push(doc.id);
                });
             });
 
@@ -413,6 +457,7 @@ class perfil_doctor extends Component {
             .then((querySnapshot) => {
                querySnapshot.forEach((doc) => {
                   sabado.push(doc.data().hora);
+                  sabado1.push(doc.id);
                });
             });
 
@@ -424,6 +469,7 @@ class perfil_doctor extends Component {
             .then((querySnapshot) => {
                querySnapshot.forEach((doc) => {
                   domingo.push(doc.data().hora);
+                  domingo1.push(doc.id);
                });
 
                horariolinea.innerHTML += `
@@ -448,13 +494,85 @@ class perfil_doctor extends Component {
                    .join(" ")}</br>
                 <label className="tituloTabla">Domingo:</lable>${domingo
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
+                <label>Lunes:</lable>${lunes
+                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Lunes&codijo=${lunes1[index]}&tipocita=Linea&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${lunes1[index]}&tipocita=Linea">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
+                   .join(" ")}</br>
+                <label>Martes:</lable>${martes
+                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Martes&codijo=${martes1[index]}&tipocita=Linea&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${martes1[index]}&tipocita=Linea">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
+                   .join(" ")}</br>
+                <label>Miercoles:</lable>${miercoles
+                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Miercoles&codijo=${miercoles1[index]}&tipocita=Linea&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${miercoles1[index]}&tipocita=Linea">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
+                   .join(" ")}</br>
+                <label>Jueves:</lable>${jueves
+                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Jueves&codijo=${jueves1[index]}&tipocita=Linea&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${jueves1[index]}&tipocita=Linea">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
+                   .join(" ")}</br>
+                <label>Viernes:</lable>${viernes
+                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Viernes&codijo=${viernes1[index]}&tipocita=Linea&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${viernes1[index]}&tipocita=Linea">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
+                   .join(" ")}</br>
+                <label>Sabado:</lable>${sabado
+                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Sabado&codijo=${sabado1[index]}&tipocita=Linea&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${sabado1[index]}&tipocita=Linea">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
+                   .join(" ")}</br>
+                <label>Domingo:</lable>${domingo
+                   .map((val, index) => `<a>${val}<a href="/editar_horario?dia=Domingo&codijo=${domingo1[index]}&tipocita=Linea&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${domingo1[index]}&tipocita=Linea">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
                 `;
             });
       });
    }
 
-   pagar() {}
+   eliminarhorario()
+   {
+      firebase.auth().onAuthStateChanged((user) => {
+      var uid = user.uid;
+      var queryString = window.location.search;
+      var urlParams = new URLSearchParams(queryString);
+      var codijoeliminar = urlParams.get('codijoeliminar');
+      var dia = urlParams.get('dia');
+      var tipocita = urlParams.get('tipocita');
+      if(tipocita!=null)
+      {
+      if(tipocita=="Linea")
+      {
+         db.collection("Usuarios/"+uid+"/HorariosLinea/"+dia+"/"+dia+"1").doc(codijoeliminar).delete().then(() => {
+            console.log("Document successfully deleted!");
+            db.collection("Usuarios/"+uid+"/HorariosLineaDoctor/"+dia+"/"+dia+"1").doc(codijoeliminar).delete().then(() => {
+               console.log("Document successfully deleted!");
+               window.location.href = "/perfil_doctor";
+           }).catch((error) => {
+               console.error("Error removing document: ", error);
+           });
+   
+        }).catch((error) => {
+            console.error("Error removing document: ", error);
+        });
+
+      }else
+      {
+         db.collection("Usuarios/"+uid+"/HorariosPresencial/"+dia+"/"+dia+"1").doc(codijoeliminar).delete().then(() => {
+            console.log("Document successfully deleted!");
+            db.collection("Usuarios/"+uid+"/HorariosPresencialDoctor/"+dia+"/"+dia+"1").doc(codijoeliminar).delete().then(() => {
+               console.log("Document successfully deleted!");
+               window.location.href = "/perfil_doctor";
+           }).catch((error) => {
+               console.error("Error removing document: ", error);
+           });
+   
+        }).catch((error) => {
+            console.error("Error removing document: ", error);
+        });
+
+      }
+   }
+      
+      })
+   }
+
+   cancelar()
+   {
+      window.location.href ='/perfil_doctor';
+
+   }
+
 
    //html que se muestra en la pagina
    render() {
@@ -588,6 +706,46 @@ class perfil_doctor extends Component {
                      Modificar
                   </button>
                </div>
+               <label>Agrega imagen de perfil</label>
+               <br />
+               <input type="file" id="file"></input>
+               <br />
+               <label>Nombres</label>
+               <br />
+               <input type="text" id="nombremodificar"></input>
+               <br />
+               <label>Apellido Paterno</label>
+               <br />
+               <input type="text" id="apellidoPmodificar"></input>
+               <br />
+               <label>Apellido Materno</label>
+               <br />
+               <input type="text" id="apellidoMmodificar"></input>
+               <br />
+               <label>Costo de la consulta</label>
+               <br />
+               <input type="number" id="costomodificar"></input>
+               <br />
+               <label>Telefono</label>
+               <br />
+               <input type="text" id="telefonomodificar"></input>
+               <br />
+               <label>Descripcion</label>
+               <br />
+               <input type="text" id="descripcionmodificar"></input>
+               <br />
+               <input
+                  type="button"
+                  value="Modificar"
+                  onClick={this.editar1}
+               ></input><br/>
+                 <input
+                  type="button"
+                  id=""
+                  onClick={this.cancelar}
+                  value="Cancelar"
+               ></input>
+               <br />
             </div>
             <div id="pago" className="contenedor contentBlanco">
                <h2 className="titulo">

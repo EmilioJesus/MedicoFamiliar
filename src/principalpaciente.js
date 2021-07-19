@@ -12,6 +12,7 @@ class principalpaciente extends Component {
       this.logeado();
       this.especialidad();
       this.estado();
+      this.opiniones();
    }
 
    especialidad() {
@@ -610,43 +611,43 @@ class principalpaciente extends Component {
                         <label>Lunes-${lunesfecha}:</lable>${lunes
                            .map(
                               (val, index) =>
-                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${lunes1[index]}&dia=Lunes&fecha=${lunesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendar?id=${codijo}&horario=${val}&indice=${lunes1[index]}&dia=Lunes&fecha=${lunesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
                            .join(" ")}</br></br>
                         <label>Martes-${martesfecha}:</lable>${martes
                            .map(
                               (val, index) =>
-                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${martes1[index]}&dia=Martes&fecha=${martesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendar?id=${codijo}&horario=${val}&indice=${martes1[index]}&dia=Martes&fecha=${martesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
                            .join(" ")}</br></br>
                         <label>Miercoles-${miercolesfecha}:</lable>${miercoles
                            .map(
                               (val, index) =>
-                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${miercoles1[index]}&dia=Mircoles&fecha=${miercolesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendar?id=${codijo}&horario=${val}&indice=${miercoles1[index]}&dia=Mircoles&fecha=${miercolesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
                            .join(" ")}</br></br>
                         <label>Jueves-${juevesfecha}:</lable>${jueves
                            .map(
                               (val, index) =>
-                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${jueves1[index]}&dia=Jueves&fecha=${juevesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendar?id=${codijo}&horario=${val}&indice=${jueves1[index]}&dia=Jueves&fecha=${juevesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
                            .join(" ")}</br></br>
                         <label>Viernes-${viernesfecha}:</lable>${viernes
                            .map(
                               (val, index) =>
-                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${viernes1[index]}&dia=Viernes&fecha=${viernesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendar?id=${codijo}&horario=${val}&indice=${viernes1[index]}&dia=Viernes&fecha=${viernesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
                            .join(" ")}</br></br>
                         <label>Sabado-${sabadofecha}:</lable>${sabado
                            .map(
                               (val, index) =>
-                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${sabado1[index]}&dia=Sabado&fecha=${sabadofecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendar?id=${codijo}&horario=${val}&indice=${sabado1[index]}&dia=Sabado&fecha=${sabadofecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
                            .join(" ")}</br></br>
                         <label>Domingo-${domingofecha}:</lable>${domingo
                            .map(
                               (val, index) =>
-                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${domingo1[index]}&dia=Domigo&fecha=${domingofecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendar?id=${codijo}&horario=${val}&indice=${domingo1[index]}&dia=Domigo&fecha=${domingofecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
                            .join(" ")}  
                                    </div>   
@@ -808,43 +809,43 @@ class principalpaciente extends Component {
                         <label>Lunes-${lunesfecha}:</lable>${lunes
                            .map(
                               (val, index) =>
-                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${lunes1[index]}&dia=Lunes&fecha=${lunesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendar?id=${codijo}&horario=${val}&indice=${lunes1[index]}&dia=Lunes&fecha=${lunesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
                            .join(" ")}</br></br>
                         <label>Martes-${martesfecha}:</lable>${martes
                            .map(
                               (val, index) =>
-                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${martes1[index]}&dia=Martes&fecha=${martesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendar?id=${codijo}&horario=${val}&indice=${martes1[index]}&dia=Martes&fecha=${martesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
                            .join(" ")}</br></br>
                         <label>Miercoles-${miercolesfecha}:</lable>${miercoles
                            .map(
                               (val, index) =>
-                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${miercoles1[index]}&dia=Mircoles&fecha=${miercolesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendar?id=${codijo}&horario=${val}&indice=${miercoles1[index]}&dia=Mircoles&fecha=${miercolesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
                            .join(" ")}</br></br>
                         <label>Jueves-${juevesfecha}:</lable>${jueves
                            .map(
                               (val, index) =>
-                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${jueves1[index]}&dia=Jueves&fecha=${juevesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendar?id=${codijo}&horario=${val}&indice=${jueves1[index]}&dia=Jueves&fecha=${juevesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
                            .join(" ")}</br></br>
                         <label>Viernes-${viernesfecha}:</lable>${viernes
                            .map(
                               (val, index) =>
-                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${viernes1[index]}&dia=Viernes&fecha=${viernesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendar?id=${codijo}&horario=${val}&indice=${viernes1[index]}&dia=Viernes&fecha=${viernesfecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
                            .join(" ")}</br></br>
                         <label>Sabado-${sabadofecha}:</lable>${sabado
                            .map(
                               (val, index) =>
-                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${sabado1[index]}&dia=Sabado&fecha=${sabadofecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendar?id=${codijo}&horario=${val}&indice=${sabado1[index]}&dia=Sabado&fecha=${sabadofecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
                            .join(" ")}</br></br>
                         <label>Domingo-${domingofecha}:</lable>${domingo
                            .map(
                               (val, index) =>
-                                 `<a class="btnAgregar" href="/agendarmedico?id=${codijo}&horario=${val}&indice=${domingo1[index]}&dia=Domigo&fecha=${domingofecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
+                                 `<a class="btnAgregar" href="/agendar?id=${codijo}&horario=${val}&indice=${domingo1[index]}&dia=Domigo&fecha=${domingofecha}&tipoconsulta=${consultatipo}&costo=${costo}">${val}</a>&nbsp&nbsp&nbsp&nbsp`
                            )
                            .join(" ")}  
                                    </div>   
@@ -901,6 +902,29 @@ class principalpaciente extends Component {
          .catch((error) => {
             // An error happened.
          });
+   }
+
+
+
+   //se mandan atraer las opiniones a la base de datos
+   opiniones()
+   {
+      db.collection("Administrador/Usuarios/Opiniones").get().then((querySnapshot) => {
+         querySnapshot.forEach((doc) => {
+            //div donde se mandan a imprimir 
+             var opiniones=document.getElementById('opiniones');
+             opiniones.innerHTML+= `
+             <div className='contenedor'>
+             <section className='contenedorCardTest'>
+               <div class="foto"><img src=${doc.data().Imagenperfil} /></div>
+               <label>${doc.data().Nombre}</label><br/>
+               <label>${doc.data().Email}</label><br/>
+               <label>${doc.data().Opinion}</label><br/><br/>
+             </section>
+            </div>
+             `
+         });
+     });
    }
 
    //html que se muestra en la pagina
@@ -970,6 +994,9 @@ class principalpaciente extends Component {
             </div>
             <div>
                <ContenedorTestimonialOpinar opinar={this.opinar} />
+            </div>
+            <div id="opiniones">
+
             </div>
          </>
       );
