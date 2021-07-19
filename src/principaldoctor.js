@@ -148,7 +148,6 @@ class principaldoctor extends Component {
                                     });
                               } else {
                                  citas.innerHTML += `
-                        </br><label>${id}</label></br>
                         <img src=${imagen} style="width:10%;height:150px"/></br>
                         <label>Nombre:${nombre1}</label></br>
                         <label>Email: ${email}</label></br>
@@ -207,7 +206,6 @@ class principaldoctor extends Component {
                      var costo = doc.data().Costoconsulta;
                      var id = doc.id;
                      citas.innerHTML += `
-                        </br><label>${id}</label></br>
                         <img src=${imagen} style="width:10%;height:150px"/></br>
                         <label>Nombre:${nombre1}</label></br>
                         <label>Email: ${email}</label></br>
@@ -259,7 +257,6 @@ class principaldoctor extends Component {
                      var costo = doc.data().Costoconsulta;
                      var id = doc.id;
                      citas.innerHTML += `
-                          </br><label>${id}</label></br>
                           <img src=${imagen} style="width:10%;height:150px"/></br>
                           <label>Nombre:${nombre1}</label></br>
                           <label>Especialidad:${especialidad}</label></br>

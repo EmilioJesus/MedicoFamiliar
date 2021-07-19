@@ -264,6 +264,11 @@ class agendarmedico extends Component {
       }
    }
 
+   cancelar()
+   {
+      window.location.href ='/';
+   }
+
    //html que se muestra en la pagina
    render() {
       return (
@@ -354,12 +359,8 @@ class agendarmedico extends Component {
                <br />
                <textarea className="textArea" id="comentarios"></textarea>
                <br />
-               <button
-                  className="btn-principal seconbtn"
-                  onClick={this.agendar}
-               >
-                  Agendar
-               </button>
+               <button className="btn-principal seconbtn" onClick={this.agendar}> Agendar</button>
+               <input type="button" className="btn-principal seconbtn" onClick={this.cancelar} value="Cancelar" />
             </div>
          </div>
       );

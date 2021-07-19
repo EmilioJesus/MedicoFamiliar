@@ -119,8 +119,6 @@ class citaspaciente extends React.Component {
                            });
                      } else {
                         citas.innerHTML += `
-                          
-                          </br><label>${id}</label></br>
                           <img src=${imagen} style="width:10%;height:150px"/></br>
                           <label>Nombre:DR. ${nombre1}</label></br>
                           <label>Especialidad:${especialidad}</label></br>
@@ -361,7 +359,6 @@ class citaspaciente extends React.Component {
                      var costo = doc.data().Costoconsulta;
                      var id = doc.id;
                      citas.innerHTML += `
-                          </br><label>${id}</label></br>
                           <img src=${imagen} style="width:10%;height:150px"/></br>
                           <label>Nombre:DR. ${nombre1}</label></br>
                           <label>Especialidad:${especialidad}</label></br>
@@ -414,7 +411,6 @@ class citaspaciente extends React.Component {
                      var costo = doc.data().Costoconsulta;
                      var id = doc.id;
                      citas.innerHTML += `
-                          </br><label>${id}</label></br>
                           <img src=${imagen} style="width:10%;height:150px"/></br>
                           <label>Nombre:DR. ${nombre1}</label></br>
                           <label>Especialidad:${especialidad}</label></br>

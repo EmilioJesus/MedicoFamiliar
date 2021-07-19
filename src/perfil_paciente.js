@@ -574,6 +574,11 @@ class perfil_paciente extends Component {
       });
    }
 
+   cancelar()
+   {
+      window.location.href ='/perfil_paciente';
+   }
+
    render() {
       return (
          <div onload={this.inicio}>
@@ -807,6 +812,7 @@ class perfil_paciente extends Component {
                   >
                      Modificar
                   </button>
+                  <input type="button" className="btn-principal seconbtn" onClick={this.cancelar} value="Cancelar" />
                </div>
             </div>
          </div>
