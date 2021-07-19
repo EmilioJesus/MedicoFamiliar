@@ -44,8 +44,20 @@ body::-webkit-scrollbar-thumb {
  * ! ESTILOS PARA LOS BOTONES 
 */
 
+.btnPagar {
+   background: #5bdcb1;
+   border-radius: 23px;
+   display: inline-block;
+   width: 13rem;
+   padding: 1rem;
+   font-size: 1.2rem;
+   font-weight: 600;
+   color: white;
+   letter-spacing: 1px;
+}
+
 .btn-principal {
-   margin: 1rem;
+   margin: 1rem auto;
    font-weight: normal;
    width: 7.3rem;
    height: 40px;
@@ -509,6 +521,18 @@ body::-webkit-scrollbar-thumb {
    padding: 0.8rem 0;
    color: var(--colormorado);
    font-size: 1.4rem;
+}
+
+/**
+* ! PERFIL DOCTOR
+*/
+
+.tabla1 {
+   height: 30rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-around;
 }
 
 /** 

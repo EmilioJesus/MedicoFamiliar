@@ -2,7 +2,6 @@ import React, { Component, useImperativeHandle } from "react";
 import db from "./firebase_config";
 import firebase from "firebase/app";
 import "firebase/auth";
-import logo from "./imagenes/perfil_predeterminada.jpg";
 import MenuDoctor from "./Components/Menu/MenuDoctor";
 
 class perfil_doctor extends Component {
@@ -314,25 +313,25 @@ class perfil_doctor extends Component {
 
                horariopresencial.innerHTML += `
                 <h3>Horarios Presencial</h3> 
-                <label>Lunes:</lable>${lunes
+                <label className="tituloTabla">Lunes:</lable>${lunes
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
-                <label>Martes:</lable>${martes
+                <label className="tituloTabla">Martes:</lable>${martes
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
-                <label>Miercoles:</lable>${miercoles
+                <label className="tituloTabla">Miercoles:</lable>${miercoles
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
-                <label>Jueves:</lable>${jueves
+                <label className="tituloTabla">Jueves:</lable>${jueves
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
-                <label>Viernes:</lable>${viernes
+                <label className="tituloTabla">Viernes:</lable>${viernes
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
-                <label>Sabado:</lable>${sabado
+                <label className="tituloTabla">Sabado:</lable>${sabado
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
-                <label>Domingo:</lable>${domingo
+                <label className="tituloTabla">Domingo:</lable>${domingo
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
                 `;
@@ -429,25 +428,25 @@ class perfil_doctor extends Component {
 
                horariolinea.innerHTML += `
                 <h3>Horarios linea</h3> 
-                <label>Lunes:</lable>${lunes
+                <label className="tituloTabla">Lunes:</lable>${lunes
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
-                <label>Martes:</lable>${martes
+                <label className="tituloTabla">Martes:</lable>${martes
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
-                <label>Miercoles:</lable>${miercoles
+                <label className="tituloTabla">Miercoles:</lable>${miercoles
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
-                <label>Jueves:</lable>${jueves
+                <label className="tituloTabla">Jueves:</lable>${jueves
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
-                <label>Viernes:</lable>${viernes
+                <label className="tituloTabla">Viernes:</lable>${viernes
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
-                <label>Sabado:</lable>${sabado
+                <label className="tituloTabla">Sabado:</lable>${sabado
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
-                <label>Domingo:</lable>${domingo
+                <label className="tituloTabla">Domingo:</lable>${domingo
                    .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
                    .join(" ")}</br>
                 `;
@@ -460,129 +459,204 @@ class perfil_doctor extends Component {
    //html que se muestra en la pagina
    render() {
       return (
-         <div onLoad={this.inicio}>
+         <div onload={this.inicio}>
             <div className="App" id="datos">
                <MenuDoctor cerrar_sesion={this.cerrar_sesion} />
-               <h1>Perfil Doctor</h1>
-               <div style={{ width: "13rem", margin: "0 auto" }}>
-                  <img src="" id="imagenperfil" />
+               <h1 className="titulo">Perfil Doctor</h1>
+
+               <div className="contenedor contentBlanco">
+                  <div className="marcoFoto">
+                     <img
+                        src=""
+                        style={{
+                           borderRadius: "50%",
+                           width: "100%",
+                           height: "100%",
+                        }}
+                        id="imagenperfil"
+                     />
+                  </div>
+                  <div className="variables">
+                     <label className="tituloTabla">Nombre:Dr.</label>
+                     <label id="nombre"></label>
+
+                     <label className="tituloTabla">Edad:</label>
+                     <label id="edadMedico"></label>
+
+                     <label className="tituloTabla">Correo:</label>
+                     <label id="correo"></label>
+
+                     <label className="tituloTabla">Cedula:</label>
+                     <label id="cedula"></label>
+
+                     <label className="tituloTabla">
+                        Costo de la consulta:
+                     </label>
+                     <label id="consulta"></label>
+                     <label className="tituloTabla">$</label>
+
+                     <label className="tituloTabla">Descripsion:</label>
+                     <label id="descripcion"></label>
+
+                     <label className="tituloTabla">Telefono:</label>
+                     <label id="telefono"></label>
+
+                     <label className="tituloTabla">Estado:</label>
+                     <label id="estado"></label>
+
+                     <label className="tituloTabla">Especialidad:</label>
+                     <label id="especialidad"></label>
+
+                     <label className="tituloTabla">
+                        Termino de inscripcion:
+                     </label>
+                     <label id="terminoinscripcion"></label>
+
+                     <button
+                        className="btn-principal seconbtn"
+                        onClick={this.editar}
+                     >
+                        Editar
+                     </button>
+                  </div>
                </div>
-               <br />
-               <label>Nombre:Dr.</label>
-               <label id="nombre"></label>
-               <br />
-               <label>Edad:</label> <label id="edadMedico"></label>
-               <br />
-               <label>Correo:</label> <label id="correo"></label>
-               <br />
-               <label>Cedula:</label> <label id="cedula"></label>
-               <br />
-               <label>Costo de la consulta:</label>{" "}
-               <label id="consulta"></label>
-               <label>$</label>
-               <br />
-               <label>Descripsion:</label> <label id="descripcion"></label>
-               <br />
-               <label>Telefono:</label>
-               <label id="telefono"></label>
-               <br />
-               <label>Estado:</label>
-               <label id="estado"></label>
-               <br />
-               <label>Especialidad:</label>
-               <label id="especialidad"></label>
-               <br />
-               <label>Termino de inscripcion:</label>{" "}
-               <label id="terminoinscripcion"></label>
-               <br />
-               <input
-                  type="button"
-                  id=""
-                  onClick={this.editar}
-                  value="Editar"
-               ></input>
-               <br />
-               <br />
             </div>
 
             <div style={{ display: "none" }} id="modificar">
-               <label>Agrega imagen de perfil</label>
-               <br />
-               <input type="file" id="file"></input>
-               <br />
-               <label>Nombres</label>
-               <br />
-               <input type="text" id="nombremodificar"></input>
-               <br />
-               <label>Apellido Paterno</label>
-               <br />
-               <input type="text" id="apellidoPmodificar"></input>
-               <br />
-               <label>Apellido Materno</label>
-               <br />
-               <input type="text" id="apellidoMmodificar"></input>
-               <br />
-               <label>Costo de la consulta</label>
-               <br />
-               <input type="number" id="costomodificar"></input>
-               <br />
-               <label>Telefono</label>
-               <br />
-               <input type="text" id="telefonomodificar"></input>
-               <br />
-               <label>Descripcion</label>
-               <br />
-               <input type="text" id="descripcionmodificar"></input>
-               <br />
-               <input
-                  type="button"
-                  value="Modificar"
-                  onClick={this.editar1}
-               ></input>
+               <h1 className="titulo">
+                  Modifica los valores de tu perfil
+                  <i className="ri-capsule-fill"></i>
+               </h1>
+
+               <div className="contentModificar contentBlanco">
+                  <label className="tituloTabla">Agrega imagen de perfil</label>
+
+                  <input type="file" id="file"></input>
+
+                  <label className="tituloTabla">Nombres</label>
+
+                  <input
+                     className="input"
+                     type="text"
+                     id="nombremodificar"
+                  ></input>
+
+                  <label className="tituloTabla">Apellido Paterno</label>
+
+                  <input
+                     className="input"
+                     type="text"
+                     id="apellidoPmodificar"
+                  ></input>
+
+                  <label className="tituloTabla">Apellido Materno</label>
+
+                  <input
+                     className="input"
+                     type="text"
+                     id="apellidoMmodificar"
+                  ></input>
+
+                  <label className="tituloTabla">Costo de la consulta</label>
+
+                  <input
+                     className="input"
+                     type="number"
+                     id="costomodificar"
+                  ></input>
+
+                  <label className="tituloTabla">Telefono</label>
+
+                  <input
+                     className="input"
+                     type="text"
+                     id="telefonomodificar"
+                  ></input>
+
+                  <label className="tituloTabla">Descripcion</label>
+
+                  <input
+                     className="input"
+                     type="text"
+                     id="descripcionmodificar"
+                  ></input>
+
+                  <button
+                     className="btn-principal seconbtn"
+                     onClick={this.editar1}
+                  >
+                     Modificar
+                  </button>
+               </div>
             </div>
-            <div id="pago">
-               <h2>Pagar inscripcion</h2>
-               <a href="https://buy.stripe.com/test_6oE17fdYl8pQ2c05kk">
-                  Pago Mensual
+            <div id="pago" className="contenedor contentBlanco">
+               <h2 className="titulo">
+                  Pagar inscripcion
+                  <i className="ri-money-dollar-circle-line"></i>
+               </h2>
+               <a
+                  className="btnPagar"
+                  href="https://buy.stripe.com/test_6oE17fdYl8pQ2c05kk"
+               >
+                  Pago Mensual <i className="ri-bank-card-2-line"></i>
                </a>
-               <br />
             </div>
-            <div id="agregarhorario">
-               <h2>Agregar horario</h2>
-               <label>Selecciona el dia</label>
-               <br />
-               <select id="dia">
-                  <option>Lunes</option>
-                  <option>Martes</option>
-                  <option>Miercoles</option>
-                  <option>Jueves</option>
-                  <option>Viernes</option>
-                  <option>Sabado</option>
-                  <option>Domingo</option>
-               </select>
-               <br />
-               <label>Tipo de cita</label>
-               <br />
-               <select id="tipo">
-                  <option>En linea</option>
-                  <option>Presencial</option>
-               </select>
-               <br />
-               <label>Ingresa la hora de Inicio</label>
-               <br />
-               <input type="time" name="hora" id="horainicio" />
-               <br />
-               <label>Ingresa la hora de Termino</label>
-               <br />
-               <input type="time" name="hora" id="horatermino" />
-               <br />
-               <input
-                  type="button"
-                  value="Agregar"
-                  onClick={this.agregar_horario}
-               ></input>
+
+            <div className="contenedor contentApricot" id="agregarhorario">
+               <h2 className="titulo">
+                  Agregar horario <i class="ri-time-fill"></i>
+               </h2>
+
+               <div className="tabla1">
+                  <label className="tituloTabla">Selecciona el dia</label>
+                  <select className="input" id="dia">
+                     <option>Lunes</option>
+                     <option>Martes</option>
+                     <option>Miercoles</option>
+                     <option>Jueves</option>
+                     <option>Viernes</option>
+                     <option>Sabado</option>
+                     <option>Domingo</option>
+                  </select>
+
+                  <label className="tituloTabla">Tipo de cita</label>
+
+                  <select className="input" id="tipo">
+                     <option>En linea</option>
+                     <option>Presencial</option>
+                  </select>
+
+                  <label className="tituloTabla">
+                     Ingresa la hora de Inicio
+                  </label>
+
+                  <input
+                     className="input"
+                     type="time"
+                     name="hora"
+                     id="horainicio"
+                  />
+
+                  <label className="tituloTabla">
+                     Ingresa la hora de Termino
+                  </label>
+
+                  <input
+                     className="input"
+                     type="time"
+                     name="hora"
+                     id="horatermino"
+                  />
+
+                  <button
+                     className="btn-principal"
+                     onClick={this.agregar_horario}
+                  >
+                     Agregar
+                  </button>
+               </div>
             </div>
-            <br />
+
             <div id="mostrarhorarios">
                <h2>Mostrar Horario</h2>
                <div id="linea"></div>

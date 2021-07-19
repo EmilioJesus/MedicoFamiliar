@@ -165,7 +165,7 @@ class principaldoctor extends Component {
                               }
                            });
                            if (citas.innerHTML == "") {
-                              citas.innerHTML += `<h2>Todavia no hay resultados</h2></br>`;
+                              citas.innerHTML += `<h2 class="tituloTabla">Todavia no hay resultados</h2></br>`;
                            }
                         });
                   } else {
@@ -223,7 +223,7 @@ class principaldoctor extends Component {
                         `;
                   });
                   if (citas.innerHTML == "") {
-                     citas.innerHTML += `<h2>Todavia no hay resultados</h2></br>`;
+                     citas.innerHTML += `<h2 class="tituloTabla">Todavia no hay resultados</h2></br>`;
                   }
                });
          }
@@ -277,7 +277,7 @@ class principaldoctor extends Component {
                           `;
                   });
                   if (citas.innerHTML == "") {
-                     citas.innerHTML += `<h2>Todavia no hay resultados</h2></br>`;
+                     citas.innerHTML += `<h2 class="tituloTabla">Todavia no hay resultados</h2></br>`;
                   }
                });
          }
@@ -303,12 +303,18 @@ class principaldoctor extends Component {
          <div onload={(this.logeado, this.especialidad, this.estado)}>
             <MenuDoctor cerrar_sesion={this.cerrar_sesion} />
 
-            <h2>Citas pendientes</h2>
-            <div id="citas"></div>
-            <h2>Citas canceladas</h2>
-            <div id="citascanceladas"></div>
-            <h2>Citas realizadas</h2>
-            <div id="citasrealizadas"></div>
+            <h2 className="titulo">
+               Mis Citas <i class="ri-hospital-fill"></i>
+            </h2>
+
+            <div className="contenedor contentBlanco">
+               <h2 className="tituloCitas">Citas pendientes</h2>
+               <div id="citas"></div>
+               <h2 className="tituloCitas">Citas canceladas</h2>
+               <div id="citascanceladas"></div>
+               <h2 className="tituloCitas">Citas realizadas</h2>
+               <div id="citasrealizadas"></div>
+            </div>
          </div>
       );
    }

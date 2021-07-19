@@ -15,35 +15,35 @@ class citaspaciente extends React.Component {
    citas() {
       firebase.auth().onAuthStateChanged((user) => {
          if (user) {
-            var uid = user.uid;
-            var citas = document.getElementById("resultadocitas");
+            let uid = user.uid;
+            let citas = document.getElementById("resultadocitas");
             db.collection("Usuarios/" + uid + "/Citas")
                .orderBy("timestamp", "asc")
                .onSnapshot((querySnapshot) => {
                   querySnapshot.forEach((doc) => {
                      console.log(`${doc.id} => ${doc.data()}`);
-                     var imagen = doc.data().Imagenperfil;
-                     var nombre = doc.data().Nombrecita;
-                     var apellidop = doc.data().ApellidoPcita;
-                     var apellidom = doc.data().ApellidoMcita;
-                     var nombre1 = nombre + " " + apellidop + " " + apellidom;
-                     var email = doc.data().Email;
-                     var especialidad = doc.data().Especialidad;
-                     var telefono = doc.data().Telefono;
-                     var primeracita = doc.data().Primeracita;
-                     var motivo = doc.data().Motivocita;
-                     var tipocita = doc.data().Tipocita;
-                     var fecha = doc.data().Fechacita;
-                     var cita = Date.parse(fecha);
-                     var horario = doc.data().Horariocita;
-                     var comentario = doc.data().Comentarios;
-                     var iddoctor = doc.data().iddoctor;
-                     var dia = doc.data().Diacita;
-                     var indice = doc.data().Indice;
-                     var costo = doc.data().Costoconsulta;
-                     var id = doc.id;
-                     var hoy = new Date();
-                     var fechahoy = Date.parse(
+                     let imagen = doc.data().Imagenperfil;
+                     let nombre = doc.data().Nombrecita;
+                     let apellidop = doc.data().ApellidoPcita;
+                     let apellidom = doc.data().ApellidoMcita;
+                     let nombre1 = nombre + " " + apellidop + " " + apellidom;
+                     let email = doc.data().Email;
+                     let especialidad = doc.data().Especialidad;
+                     let telefono = doc.data().Telefono;
+                     let primeracita = doc.data().Primeracita;
+                     let motivo = doc.data().Motivocita;
+                     let tipocita = doc.data().Tipocita;
+                     let fecha = doc.data().Fechacita;
+                     let cita = Date.parse(fecha);
+                     let horario = doc.data().Horariocita;
+                     let comentario = doc.data().Comentarios;
+                     let iddoctor = doc.data().iddoctor;
+                     let dia = doc.data().Diacita;
+                     let indice = doc.data().Indice;
+                     let costo = doc.data().Costoconsulta;
+                     let id = doc.id;
+                     let hoy = new Date();
+                     let fechahoy = Date.parse(
                         hoy.getUTCFullYear() +
                            "/" +
                            (hoy.getMonth() + 1) +
@@ -149,33 +149,33 @@ class citaspaciente extends React.Component {
    }
 
    cancelar() {
-      var queryString = window.location.search;
-      var urlParams = new URLSearchParams(queryString);
-      var id = urlParams.get("id");
-      var iddoctor = urlParams.get("iddoctor");
+      let queryString = window.location.search;
+      let urlParams = new URLSearchParams(queryString);
+      let id = urlParams.get("id");
+      let iddoctor = urlParams.get("iddoctor");
       if (id != null) {
          firebase.auth().onAuthStateChanged((user) => {
-            var uid = user.uid;
+            let uid = user.uid;
             db.collection("Usuarios/" + uid + "/Citas")
                .doc(id)
                .onSnapshot((doc) => {
                   if (doc.exists) {
-                     var imagen = doc.data().Imagenperfil;
-                     var nombre = doc.data().Nombrecita;
-                     var apellidop = doc.data().ApellidoPcita;
-                     var apellidom = doc.data().ApellidoMcita;
-                     var email = doc.data().Email;
-                     var especialidad = doc.data().Especialidad;
-                     var telefono = doc.data().Telefono;
-                     var primeracita = doc.data().Primeracita;
-                     var motivo = doc.data().Motivocita;
-                     var tipocita = doc.data().Tipocita;
-                     var fecha = doc.data().Fechacita;
-                     var horario = doc.data().Horariocita;
-                     var comentario = doc.data().Comentarios;
-                     var dia = doc.data().Diacita;
-                     var indice = doc.data().Indice;
-                     var costo = doc.data().Costoconsulta;
+                     let imagen = doc.data().Imagenperfil;
+                     let nombre = doc.data().Nombrecita;
+                     let apellidop = doc.data().ApellidoPcita;
+                     let apellidom = doc.data().ApellidoMcita;
+                     let email = doc.data().Email;
+                     let especialidad = doc.data().Especialidad;
+                     let telefono = doc.data().Telefono;
+                     let primeracita = doc.data().Primeracita;
+                     let motivo = doc.data().Motivocita;
+                     let tipocita = doc.data().Tipocita;
+                     let fecha = doc.data().Fechacita;
+                     let horario = doc.data().Horariocita;
+                     let comentario = doc.data().Comentarios;
+                     let dia = doc.data().Diacita;
+                     let indice = doc.data().Indice;
+                     let costo = doc.data().Costoconsulta;
 
                      db.collection("Usuarios")
                         .doc(uid)
@@ -205,20 +205,20 @@ class citaspaciente extends React.Component {
                               .doc(id)
                               .onSnapshot((doc) => {
                                  if (doc.exists) {
-                                    var imagen = doc.data().Imagenperfil;
-                                    var nombre = doc.data().Nombrecita;
-                                    var apellidop = doc.data().ApellidoPcita;
-                                    var apellidom = doc.data().ApellidoMcita;
-                                    var email = doc.data().Email;
-                                    var telefono = doc.data().Telefono;
-                                    var primeracita = doc.data().Primeracita;
-                                    var motivo = doc.data().Motivocita;
-                                    var tipocita = doc.data().Tipocita;
-                                    var fecha = doc.data().Fechacita;
-                                    var horario = doc.data().Horariocita;
-                                    var comentario = doc.data().Comentarios;
-                                    var dia = doc.data().Diacita;
-                                    var indice = doc.data().Indice;
+                                    let imagen = doc.data().Imagenperfil;
+                                    let nombre = doc.data().Nombrecita;
+                                    let apellidop = doc.data().ApellidoPcita;
+                                    let apellidom = doc.data().ApellidoMcita;
+                                    let email = doc.data().Email;
+                                    let telefono = doc.data().Telefono;
+                                    let primeracita = doc.data().Primeracita;
+                                    let motivo = doc.data().Motivocita;
+                                    let tipocita = doc.data().Tipocita;
+                                    let fecha = doc.data().Fechacita;
+                                    let horario = doc.data().Horariocita;
+                                    let comentario = doc.data().Comentarios;
+                                    let dia = doc.data().Diacita;
+                                    let indice = doc.data().Indice;
                                     db.collection("Usuarios")
                                        .doc(iddoctor)
                                        .collection("Citascanceladas")
@@ -332,34 +332,34 @@ class citaspaciente extends React.Component {
    }
 
    citascanceladas() {
-      var citas1 = (document.getElementById("citascanceladas").innerHTML = "");
+      let citas1 = (document.getElementById("citascanceladas").innerHTML = "");
       firebase.auth().onAuthStateChanged((user) => {
          if (user) {
-            var uid = user.uid;
-            var citas = document.getElementById("citascanceladas");
+            let uid = user.uid;
+            let citas = document.getElementById("citascanceladas");
             db.collection("Usuarios/" + uid + "/Citascanceladas")
                .orderBy("timestamp", "asc")
                .onSnapshot((querySnapshot) => {
                   querySnapshot.forEach((doc) => {
-                     var imagen = doc.data().Imagenperfil;
-                     var nombre = doc.data().Nombrecita;
-                     var apellidop = doc.data().ApellidoPcita;
-                     var apellidom = doc.data().ApellidoMcita;
-                     var nombre1 = nombre + " " + apellidop + " " + apellidom;
-                     var email = doc.data().Email;
-                     var especialidad = doc.data().Especialidad;
-                     var telefono = doc.data().Telefono;
-                     var primeracita = doc.data().Primeracita;
-                     var motivo = doc.data().Motivocita;
-                     var tipocita = doc.data().Tipocita;
-                     var fecha = doc.data().Fechacita;
-                     var horario = doc.data().Horariocita;
-                     var comentario = doc.data().Comentarios;
-                     var iddoctor = doc.data().iddoctor;
-                     var dia = doc.data().Diacita;
-                     var indice = doc.data().Indice;
-                     var costo = doc.data().Costoconsulta;
-                     var id = doc.id;
+                     let imagen = doc.data().Imagenperfil;
+                     let nombre = doc.data().Nombrecita;
+                     let apellidop = doc.data().ApellidoPcita;
+                     let apellidom = doc.data().ApellidoMcita;
+                     let nombre1 = nombre + " " + apellidop + " " + apellidom;
+                     let email = doc.data().Email;
+                     let especialidad = doc.data().Especialidad;
+                     let telefono = doc.data().Telefono;
+                     let primeracita = doc.data().Primeracita;
+                     let motivo = doc.data().Motivocita;
+                     let tipocita = doc.data().Tipocita;
+                     let fecha = doc.data().Fechacita;
+                     let horario = doc.data().Horariocita;
+                     let comentario = doc.data().Comentarios;
+                     let iddoctor = doc.data().iddoctor;
+                     let dia = doc.data().Diacita;
+                     let indice = doc.data().Indice;
+                     let costo = doc.data().Costoconsulta;
+                     let id = doc.id;
                      citas.innerHTML += `
                           </br><label>${id}</label></br>
                           <img src=${imagen} style="width:10%;height:150px"/></br>
@@ -388,31 +388,31 @@ class citaspaciente extends React.Component {
    citasrealizadas() {
       firebase.auth().onAuthStateChanged((user) => {
          if (user) {
-            var uid = user.uid;
-            var citas = document.getElementById("citasrealizadas");
+            let uid = user.uid;
+            let citas = document.getElementById("citasrealizadas");
             db.collection("Usuarios/" + uid + "/Citasrealizadas")
                .orderBy("timestamp", "asc")
                .onSnapshot((querySnapshot) => {
                   querySnapshot.forEach((doc) => {
-                     var imagen = doc.data().Imagenperfil;
-                     var nombre = doc.data().Nombrecita;
-                     var apellidop = doc.data().ApellidoPcita;
-                     var apellidom = doc.data().ApellidoMcita;
-                     var nombre1 = nombre + "" + apellidop + "" + apellidom;
-                     var email = doc.data().Email;
-                     var especialidad = doc.data().Especialidad;
-                     var telefono = doc.data().Telefono;
-                     var primeracita = doc.data().Primeracita;
-                     var motivo = doc.data().Motivocita;
-                     var tipocita = doc.data().Tipocita;
-                     var fecha = doc.data().Fechacita;
-                     var horario = doc.data().Horariocita;
-                     var comentario = doc.data().Comentarios;
-                     var iddoctor = doc.data().iddoctor;
-                     var dia = doc.data().Diacita;
-                     var indice = doc.data().Indice;
-                     var costo = doc.data().Costoconsulta;
-                     var id = doc.id;
+                     let imagen = doc.data().Imagenperfil;
+                     let nombre = doc.data().Nombrecita;
+                     let apellidop = doc.data().ApellidoPcita;
+                     let apellidom = doc.data().ApellidoMcita;
+                     let nombre1 = nombre + "" + apellidop + "" + apellidom;
+                     let email = doc.data().Email;
+                     let especialidad = doc.data().Especialidad;
+                     let telefono = doc.data().Telefono;
+                     let primeracita = doc.data().Primeracita;
+                     let motivo = doc.data().Motivocita;
+                     let tipocita = doc.data().Tipocita;
+                     let fecha = doc.data().Fechacita;
+                     let horario = doc.data().Horariocita;
+                     let comentario = doc.data().Comentarios;
+                     let iddoctor = doc.data().iddoctor;
+                     let dia = doc.data().Diacita;
+                     let indice = doc.data().Indice;
+                     let costo = doc.data().Costoconsulta;
+                     let id = doc.id;
                      citas.innerHTML += `
                           </br><label>${id}</label></br>
                           <img src=${imagen} style="width:10%;height:150px"/></br>
