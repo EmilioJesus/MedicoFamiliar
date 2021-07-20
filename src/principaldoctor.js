@@ -148,18 +148,21 @@ class principaldoctor extends Component {
                                     });
                               } else {
                                  citas.innerHTML += `
-                        <img src=${imagen} style="width:10%;height:150px"/></br>
-                        <label>Nombre:${nombre1}</label></br>
-                        <label>Email: ${email}</label></br>
-                        <label>Telefono: ${telefono}</label></br>
-                        <label>Costo consulta:$${costo}</label></br>
-                        <label>Primera cita: ${primeracita}</label></br>
-                        <label>Motivo: ${motivo}</label></br>
-                        <label>Tipo cita: ${tipocita}</label></br>
-                        <label>Dia: ${dia}</label></br>
-                        <label>Fecha: ${fecha}</label></br>
-                        <label>Horario: ${horario}</label></br>
-                        <label>Comentario: ${comentario}</label></br>
+                                 <div class="cita">
+                                 <div class="fotoCita"><img  src=${imagen}/></div>
+                                 <label><b>Nombre:</b>${nombre1}</label>
+                                 <label><b>Email:<//b> ${email}</label>
+                                 <label><b>Telefono:</b> ${telefono}</label>
+                                 <label><b>Costo consulta:$</b>${costo}</label>
+                                 <label><b>Primera cita:</b> ${primeracita}</label>
+                                 <label><b>Motivo:</b> ${motivo}</label>
+                                 <label><b>Tipo cita:</b> ${tipocita}</label>
+                                 <label><b>Dia:</b> ${dia}</label>
+                                 <label><b>Fecha:</b> ${fecha}</label>
+                                 <label><b>Horario:</b> ${horario}</label>
+                                 <label><b>Comentario:</b> ${comentario}</label>
+                                 </div>
+                       
                         `;
                               }
                            });
@@ -206,18 +209,20 @@ class principaldoctor extends Component {
                      var costo = doc.data().Costoconsulta;
                      var id = doc.id;
                      citas.innerHTML += `
-                        <img src=${imagen} style="width:10%;height:150px"/></br>
-                        <label>Nombre:${nombre1}</label></br>
-                        <label>Email: ${email}</label></br>
-                        <label>Telefono: ${telefono}</label></br>
-                        <label>Costo consulta:$${costo}</label></br>
-                        <label>Primera cita: ${primeracita}</label></br>
-                        <label>Motivo: ${motivo}</label></br>
-                        <label>Tipo cita: ${tipocita}</label></br>
-                        <label>Dia: ${dia}</label></br>
-                        <label>Fecha: ${fecha}</label></br>
-                        <label>Horario: ${horario}</label></br>
-                        <label>Comentario: ${comentario}</label></br>
+                     <div class="cita">
+                     <div class="fotoCita"><img  src=${imagen}/></div>
+                     <label><b>Nombre:</b>${nombre1}</label>
+                     <label><b>Email:</b> ${email}</label>
+                     <label><b>Telefono:</b> ${telefono}</label>
+                     <label><b>Costo consulta:$</b>${costo}</label>
+                     <label><b>Primera cita:</b> ${primeracita}</label>
+                     <label><b>Motivo:</b> ${motivo}</label>
+                     <label><b>Tipo cita:</b> ${tipocita}</label>
+                     <label><b>Dia:</b> ${dia}</label>
+                     <label><b>Fecha:</b> ${fecha}</label>
+                     <label><b>Horario:</b> ${horario}</label>
+                     <label><b>Comentario:</b> ${comentario}</label>
+                     </div>
                         `;
                   });
                   if (citas.innerHTML == "") {
@@ -257,19 +262,20 @@ class principaldoctor extends Component {
                      var costo = doc.data().Costoconsulta;
                      var id = doc.id;
                      citas.innerHTML += `
-                          <img src=${imagen} style="width:10%;height:150px"/></br>
-                          <label>Nombre:${nombre1}</label></br>
-                          <label>Especialidad:${especialidad}</label></br>
-                          <label>Email: ${email}</label></br>
-                          <label>Telefono: ${telefono}</label></br>
-                          <label>Costo consulta:$${costo}</label></br>
-                          <label>Primera cita: ${primeracita}</label></br>
-                          <label>Motivo: ${motivo}</label></br>
-                          <label>Tipo cita: ${tipocita}</label></br>
-                          <label>Dia: ${dia}</label></br>
-                          <label>Fecha: ${fecha}</label></br>
-                          <label>Horario: ${horario}</label></br>
-                          <label>Comentario: ${comentario}</label></br>
+                         <div class="cita">
+                                 <div class="fotoCita"><img  src=${imagen}/></div>
+                                 <label><b>Nombre:</b>${nombre1}</label>
+                                 <label><b>Email:</b> ${email}</label>
+                                 <label><b>Telefono:</b>${telefono}</label>
+                                 <label><b>Costo consulta:$</b>${costo}</label>
+                                 <label><b>Primera cita:</b> ${primeracita}</label>
+                                 <label><b>Motivo:</b> ${motivo}</label>
+                                 <label><b>Tipo cita:</b> ${tipocita}</label>
+                                 <label><b>Dia:</b> ${dia}</label>
+                                 <label><b>Fecha:</b> ${fecha}</label>
+                                 <label><b>Horario: </b>${horario}</label>
+                                 <label><b>Comentario: </b>${comentario}</label>
+                                 </div>
                           
                           `;
                   });
@@ -301,7 +307,7 @@ class principaldoctor extends Component {
             <MenuDoctor cerrar_sesion={this.cerrar_sesion} />
 
             <h2 className="titulo">
-               Mis Citas <i class="ri-hospital-fill"></i>
+               Mis Citas <i className="ri-hospital-fill"></i>
             </h2>
 
             <div className="contenedor contentBlanco">

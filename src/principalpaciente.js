@@ -3,6 +3,7 @@ import db from "./firebase_config";
 import firebase from "firebase/app";
 import "firebase/auth";
 import ContenedorCard from "./Components/Cards/ContentCard";
+import ContenedorTestimonialOpinar from "./Components/Cards/ContenedorTestimonialOpinar";
 import MenuLoggedUser from "./Components/Menu/MenuLoggedUser";
 
 const img = require.context("./imagenes", true);
@@ -992,10 +993,17 @@ class principalpaciente extends Component {
                </h1>
                <ContenedorCard />
             </div>
+
             <h1 className="titulo">
                ¿Qué opinan <br /> de nosotros? <i className="fa fa-users"></i>
             </h1>
-            <div className="contenedor contenedorCardTest" id="opiniones"></div>
+            <div
+               id="opiniones"
+               className="contenedor contenedorCardTest "
+            ></div>
+            <div>
+               <ContenedorTestimonialOpinar opinar={this.opinar} />
+            </div>
          </>
       );
    }

@@ -119,20 +119,21 @@ class citaspaciente extends React.Component {
                            });
                      } else {
                         citas.innerHTML += `
-                          <img src=${imagen} style="width:10%;height:150px"/></br>
-                          <label>Nombre:DR. ${nombre1}</label></br>
-                          <label>Especialidad:${especialidad}</label></br>
-                          <label>Costo consulta:$${costo}</label></br>
-                          <label>Email: ${email}</label></br>
-                          <label>Telefono: ${telefono}</label></br>
-                          <label>Primera cita: ${primeracita}</label></br>
-                          <label>Motivo: ${motivo}</label></br>
-                          <label>Tipo cita: ${tipocita}</label></br>
-                          <label>Dia: ${dia}</label></br>
-                          <label>Fecha: ${fecha}</label></br>
-                          <label>Horario: ${horario}</label></br>
-                          <label>Comentario: ${comentario}</label></br>
-                          <a href="/citaspaciente?id=${id}&iddoctor=${iddoctor}">Cancelar</a>
+                        <div class="cita">
+                          <div class="fotoCita"><img  src=${imagen}/></div>
+                          <label><b>Nombre:DR.</b> ${nombre1}</label>
+                          <label><b>Especialidad:</b>${especialidad}</label>
+                          <label><b>Costo consulta:$</b>${costo}</label>
+                          <label><b>Email:</b> ${email}</label>
+                          <label><b>Telefono:</b> ${telefono}</label>
+                          <label><b>Primera cita:</b> ${primeracita}</label>
+                          <label><b>Motivo:</b> ${motivo}</label>
+                          <label><b>Fecha:</b> ${fecha}</label>
+                          <label><b>Horario:</b> ${horario}</label>
+                          <label><b>Comentario:</b> ${comentario}</label>
+                          <a class="btnCancelarCita" href="/citaspaciente?id=${id}&iddoctor=${iddoctor}">Cancelar</a>
+                        </div>
+                          
                           
                           
                           `;
@@ -359,19 +360,23 @@ class citaspaciente extends React.Component {
                      let costo = doc.data().Costoconsulta;
                      let id = doc.id;
                      citas.innerHTML += `
-                          <img src=${imagen} style="width:10%;height:150px"/></br>
-                          <label>Nombre:DR. ${nombre1}</label></br>
-                          <label>Especialidad:${especialidad}</label></br>
-                          <label>Costo consulta:$${costo}</label></br>
-                          <label>Email: ${email}</label></br>
-                          <label>Telefono: ${telefono}</label></br>
-                          <label>Primera cita: ${primeracita}</label></br>
-                          <label>Motivo: ${motivo}</label></br>
-                          <label>Tipo cita: ${tipocita}</label></br>
-                          <label>Dia: ${dia}</label></br>
-                          <label>Fecha: ${fecha}</label></br>
-                          <label>Horario: ${horario}</label></br>
-                          <label>Comentario: ${comentario}</label></br>
+
+                     <div class="cita">
+                     <div class="fotoCita"><img  src=${imagen}/></div>
+                     <label><b>Nombre:DR.</b> ${nombre1}</label>
+                     <label><b>Especialidad:</b>${especialidad}</label>
+                     <label><b>Costo consulta:$</b>${costo}</label>
+                     <label><b>Email:</b> ${email}</label>
+                     <label><b>Telefono:</b> ${telefono}</label>
+                     <label><b>Primera cita:</b> ${primeracita}</label>
+                     <label><b>Motivo:</b> ${motivo}</label>
+                     <label><b>Fecha:</b> ${fecha}</label>
+                     <label><b>Horario:</b> ${horario}</label>
+                     <label><b>Comentario:</b> ${comentario}</label>
+                    
+                   </div>
+
+                         
                           `;
                   });
                   if (citas.innerHTML == "") {
@@ -411,19 +416,20 @@ class citaspaciente extends React.Component {
                      let costo = doc.data().Costoconsulta;
                      let id = doc.id;
                      citas.innerHTML += `
-                          <img src=${imagen} style="width:10%;height:150px"/></br>
-                          <label>Nombre:DR. ${nombre1}</label></br>
-                          <label>Especialidad:${especialidad}</label></br>
-                          <label>Costo consulta:$${costo}</label></br>
-                          <label>Email: ${email}</label></br>
-                          <label>Telefono: ${telefono}</label></br>
-                          <label>Primera cita: ${primeracita}</label></br>
-                          <label>Motivo: ${motivo}</label></br>
-                          <label>Tipo cita: ${tipocita}</label></br>
-                          <label>Dia: ${dia}</label></br>
-                          <label>Fecha: ${fecha}</label></br>
-                          <label>Horario: ${horario}</label></br>
-                          <label>Comentario: ${comentario}</label></br>
+                     <div class="cita">
+                     <div class="fotoCita"><img  src=${imagen}/></div>
+                     <label><b>Nombre:DR.</b> ${nombre1}</label>
+                     <label><b>Especialidad:</b>${especialidad}</label>
+                     <label><b>Costo consulta:$</b>${costo}</label>
+                     <label><b>Email:</b> ${email}</label>
+                     <label><b>Telefono:</b> ${telefono}</label>
+                     <label><b>Primera cita:</b> ${primeracita}</label>
+                     <label><b>Motivo:</b> ${motivo}</label>
+                     <label><b>Fecha:</b> ${fecha}</label>
+                     <label><b>Horario:</b> ${horario}</label>
+                     <label><b>Comentario:</b> ${comentario}</label>
+                     <a class="btnCancelarCita" href="/citaspaciente?id=${id}&iddoctor=${iddoctor}">Cancelar</a>
+                   </div>
                           
                           `;
                   });

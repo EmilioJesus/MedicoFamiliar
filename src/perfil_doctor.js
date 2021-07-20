@@ -324,27 +324,7 @@ class perfil_doctor extends Component {
 
                horariopresencial.innerHTML += `
                 <h3>Horarios Presencial</h3> 
-                <label className="tituloTabla">Lunes:</label>${lunes
-                   .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
-                   .join(" ")}</br>
-                <label className="tituloTabla">Martes:</label>${martes
-                   .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
-                   .join(" ")}</br>
-                <label className="tituloTabla">Miercoles:</label>${miercoles
-                   .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
-                   .join(" ")}</br>
-                <label className="tituloTabla">Jueves:</label>${jueves
-                   .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
-                   .join(" ")}</br>
-                <label className="tituloTabla">Viernes:</label>${viernes
-                   .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
-                   .join(" ")}</br>
-                <label className="tituloTabla">Sabado:</label>${sabado
-                   .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
-                   .join(" ")}</br>
-                <label className="tituloTabla">Domingo:</label>${domingo.map(
-                   (val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`
-                )}
+               <div class="horariosDoctor ">
                 <label>Lunes:</label>${lunes
                    .map(
                       (val, index) =>
@@ -386,7 +366,8 @@ class perfil_doctor extends Component {
                       (val, index) =>
                          `<a>${val}<a href="/editar_horario?dia=Domingo&codijo=${domingo1[index]}&tipocita=Presencial&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${domingo1[index]}&tipocita=Presencial">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`
                    )
-                   .join(" ")}</br>
+                   .join(" ")}
+               </div>
                 `;
             });
       });
@@ -495,28 +476,7 @@ class perfil_doctor extends Component {
 
                horariolinea.innerHTML += `
                 <h3>Horarios linea</h3> 
-                <label className="tituloTabla">Lunes:</label>
-                ${lunes
-                   .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
-                   .join(" ")}</br>
-                <label className="tituloTabla">Martes:</label>${martes
-                   .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
-                   .join(" ")}</br>
-                <label className="tituloTabla">Miercoles:</label>${miercoles
-                   .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
-                   .join(" ")}</br>
-                <label className="tituloTabla">Jueves:</label>${jueves
-                   .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
-                   .join(" ")}</br>
-                <label className="tituloTabla">Viernes:</label>${viernes
-                   .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
-                   .join(" ")}</br>
-                <label className="tituloTabla">Sabado:</label>${sabado
-                   .map((val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`)
-                   .join(" ")}</br>
-                <label className="tituloTabla">Domingo:</label>${domingo.map(
-                   (val, index) => `<a>${val}</a>&nbsp&nbsp&nbsp&nbsp`
-                )}
+                <div class="horariosDoctor contentBlanco">
                 <label>Lunes:</label>${lunes
                    .map(
                       (val, index) =>
@@ -558,7 +518,9 @@ class perfil_doctor extends Component {
                       (val, index) =>
                          `<a>${val}<a href="/editar_horario?dia=Domingo&codijo=${domingo1[index]}&tipocita=Linea&horario=${val}">Editar</a><a href="/perfil_doctor?dia=Lunes&codijoeliminar=${domingo1[index]}&tipocita=Linea">Eliminar</a></a>&nbsp&nbsp&nbsp&nbsp`
                    )
-                   .join(" ")}</br>
+                   .join(" ")}
+
+                   </div>
                 `;
             });
       });
@@ -802,7 +764,7 @@ class perfil_doctor extends Component {
 
             <div className="contenedor contentApricot" id="agregarhorario">
                <h2 className="titulo">
-                  Agregar horario <i class="ri-time-fill"></i>
+                  Agregar horario <i className="ri-time-fill"></i>
                </h2>
 
                <div className="tabla1">
@@ -855,7 +817,7 @@ class perfil_doctor extends Component {
                </div>
             </div>
 
-            <div id="mostrarhorarios">
+            <div className="contenedor contentBlanco" id="mostrarhorarios">
                <h2>Mostrar Horario</h2>
                <div id="linea"></div>
                <div id="presencial"></div>

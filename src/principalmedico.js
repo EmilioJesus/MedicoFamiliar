@@ -967,7 +967,10 @@ class principalmedico extends Component {
             <h1 className="titulo">
                ¿Qué opinan <br /> de nosotros? <i className="fa fa-users"></i>
             </h1>
-            <div className="contenedor contenedorCardTest" id="opiniones"></div>
+            <div
+               className="contenedor contenedorCardTest "
+               id="opiniones"
+            ></div>
          </div>
       );
    }
