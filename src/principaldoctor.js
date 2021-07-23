@@ -3,6 +3,7 @@ import db from "./firebase_config";
 import firebase from "firebase/app";
 import "firebase/auth";
 import MenuDoctor from "./Components/Menu/MenuDoctor";
+const img = require.context("./imagenes", true);
 
 class principaldoctor extends Component {
    componentDidMount() {
@@ -55,12 +56,12 @@ class principaldoctor extends Component {
                         .orderBy("timestamp", "asc")
                         .onSnapshot((querySnapshot) => {
                            querySnapshot.forEach((doc) => {
+                              var codijo=doc.data().idpaciente;
                               var imagen = doc.data().Imagenperfil;
                               var nombre = doc.data().Nombrecita;
                               var apellidop = doc.data().ApellidoPcita;
                               var apellidom = doc.data().ApellidoMcita;
-                              var nombre1 =
-                                 nombre + " " + apellidop + " " + apellidom;
+                              var nombre1 =nombre + " " + apellidop + " " + apellidom;
                               var email = doc.data().Email;
                               var telefono = doc.data().Telefono;
                               var primeracita = doc.data().Primeracita;
@@ -149,7 +150,7 @@ class principaldoctor extends Component {
                               } else {
                                  citas.innerHTML += `
                                  <div class="cita">
-                                 <div class="fotoCita"><img  src=${imagen}/></div>
+                                 <div class="fotoCita"><img src=${imagen}></div>
                                  <label><b>Nombre:</b>${nombre1}</label>
                                  <label><b>Email:<//b> ${email}</label>
                                  <label><b>Telefono:</b> ${telefono}</label>
@@ -160,7 +161,8 @@ class principaldoctor extends Component {
                                  <label><b>Dia:</b> ${dia}</label>
                                  <label><b>Fecha:</b> ${fecha}</label>
                                  <label><b>Horario:</b> ${horario}</label>
-                                 <label><b>Comentario:</b> ${comentario}</label>
+                                 <label><b>Comentario:</b> ${comentario}</label><br/>
+                                 <a href="doctor_usuario?codijo=${codijo}">Perfil Usuario</a>
                                  </div>
                        
                         `;
@@ -210,7 +212,7 @@ class principaldoctor extends Component {
                      var id = doc.id;
                      citas.innerHTML += `
                      <div class="cita">
-                     <div class="fotoCita"><img  src=${imagen}/></div>
+                     <div class="fotoCita"><img  src="${imagen}"></div>
                      <label><b>Nombre:</b>${nombre1}</label>
                      <label><b>Email:</b> ${email}</label>
                      <label><b>Telefono:</b> ${telefono}</label>
