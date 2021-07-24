@@ -56,12 +56,13 @@ class principaldoctor extends Component {
                         .orderBy("timestamp", "asc")
                         .onSnapshot((querySnapshot) => {
                            querySnapshot.forEach((doc) => {
-                              var codijo=doc.data().idpaciente;
+                              var codijo = doc.data().idpaciente;
                               var imagen = doc.data().Imagenperfil;
                               var nombre = doc.data().Nombrecita;
                               var apellidop = doc.data().ApellidoPcita;
                               var apellidom = doc.data().ApellidoMcita;
-                              var nombre1 =nombre + " " + apellidop + " " + apellidom;
+                              var nombre1 =
+                                 nombre + " " + apellidop + " " + apellidom;
                               var email = doc.data().Email;
                               var telefono = doc.data().Telefono;
                               var primeracita = doc.data().Primeracita;
@@ -152,7 +153,7 @@ class principaldoctor extends Component {
                                  <div class="cita">
                                  <div class="fotoCita"><img src=${imagen}></div>
                                  <label><b>Nombre:</b>${nombre1}</label>
-                                 <label><b>Email:<//b> ${email}</label>
+                                 <label><b>Email:</b> ${email}</label>
                                  <label><b>Telefono:</b> ${telefono}</label>
                                  <label><b>Costo consulta:$</b>${costo}</label>
                                  <label><b>Primera cita:</b> ${primeracita}</label>
@@ -162,7 +163,7 @@ class principaldoctor extends Component {
                                  <label><b>Fecha:</b> ${fecha}</label>
                                  <label><b>Horario:</b> ${horario}</label>
                                  <label><b>Comentario:</b> ${comentario}</label><br/>
-                                 <a href="doctor_usuario?codijo=${codijo}">Perfil Usuario</a>
+                                 <a class="irUsuario" href="doctor_usuario?codijo=${codijo}">Perfil Usuario</a>
                                  </div>
                        
                         `;
