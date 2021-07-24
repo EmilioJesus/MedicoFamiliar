@@ -87,7 +87,7 @@ class iniciar extends Component {
          })
          .catch((error) => console.log(error));
    }
-   //html que se muestra en la pagina
+
    render() {
       return (
          <div>
