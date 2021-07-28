@@ -163,7 +163,7 @@ class principaldoctor extends Component {
                                  <label><b>Fecha:</b> ${fecha}</label>
                                  <label><b>Horario:</b> ${horario}</label>
                                  <label><b>Comentario:</b> ${comentario}</label><br/>
-                                 <a class="irUsuario" href="doctor_usuario?codijo=${codijo}">Perfil Usuario</a>
+                                 <a class="irUsuario" href="doctor_usuario?codijo=${codijo}">Ver Perfil Usuario</a>
                                  </div>
                        
                         `;

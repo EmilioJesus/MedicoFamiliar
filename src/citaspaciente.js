@@ -463,6 +463,7 @@ class citaspaciente extends React.Component {
             <h2 className="titulo">
                Mis Citas <i class="ri-hospital-fill"></i>
             </h2>
+
             <div className="contenedor contentBlanco">
                <h2 className="tituloCitas">Citas recientes</h2>
                <div id="resultadocitas"></div>

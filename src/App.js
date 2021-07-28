@@ -21,16 +21,16 @@ import Agendarmedico from "./agendarmedico";
 import Footer from "./Components/Footer/Footer";
 import Editarhorario from "./editar_horario";
 import Doctorusuario from "./doctor_usuario";
-//rutas para poder ingresar a los documentos
 
+//rutas para poder ingresar a los documentos
 function App() {
    return (
       <Router>
          <Switch>
-         <Route path="/doctor_usuario">
+            <Route path="/doctor_usuario">
                <Doctorusuario />
-         </Route>
-         <Route path="/editar_horario">
+            </Route>
+            <Route path="/editar_horario">
                <Editarhorario />
             </Route>
             <Route path="/agendarmedico">
