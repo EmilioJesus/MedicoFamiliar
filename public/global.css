@@ -512,6 +512,17 @@ body::-webkit-scrollbar-thumb {
    font-size: 1.4rem;
 }
 
+.contentVideo {
+   height: 100vh;
+   background: chartreuse;
+}
+
+.video {
+   height: 50vh;
+   background: var(--colormorado);
+   border: 1px solid;
+}
+
 /**
 * ! PERFIL DOCTOR
 */
