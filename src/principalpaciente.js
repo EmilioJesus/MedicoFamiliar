@@ -907,8 +907,7 @@ class principalpaciente extends Component {
    //se mandan atraer las opiniones a la base de datos
    opiniones() {
       db.collection("Administrador/Usuarios/Opiniones")
-         .get()
-         .then((querySnapshot) => {
+         .onSnapshot((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                //div donde se mandan a imprimir
                var opiniones = document.getElementById("opiniones");
@@ -919,11 +918,12 @@ class principalpaciente extends Component {
                </div>
 
                <div class="textTestimonial">
-               <h3>${doc.data().Nombre}</h3>
+               <h3>${doc.data().Email}</h3>
                <p>${doc.data().Opinion}</p>
                </div>
             
              `;
+              
             });
          });
    }

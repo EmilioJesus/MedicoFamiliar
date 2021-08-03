@@ -70,6 +70,8 @@ class citaspaciente extends React.Component {
                               Tipocita: tipocita,
                               Diacita: dia,
                               Comentarios: comentario,
+                              Costoconsulta:costo,
+                              Especialidad:especialidad, 
                               timestamp:
                                  firebase.firestore.FieldValue.serverTimestamp(),
                            })
@@ -120,7 +122,7 @@ class citaspaciente extends React.Component {
                      } else {
                         citas.innerHTML += `
                         <div class="cita">
-                          <div class="fotoCita"><img  src=${imagen}/></div>
+                          <div class="fotoCita"><img  src='${imagen}'/></div>
                           <label><b>Nombre:DR.</b> ${nombre1}</label>
                           <label><b>Especialidad:</b>${especialidad}</label>
                           <label><b>Costo consulta:$</b>${costo}</label>
@@ -362,7 +364,7 @@ class citaspaciente extends React.Component {
                      citas.innerHTML += `
 
                      <div class="cita">
-                     <div class="fotoCita"><img  src=${imagen}/></div>
+                     <div class="fotoCita"><img  src='${imagen}'/></div>
                      <label><b>Nombre:DR.</b> ${nombre1}</label>
                      <label><b>Especialidad:</b>${especialidad}</label>
                      <label><b>Costo consulta:$</b>${costo}</label>
@@ -417,7 +419,7 @@ class citaspaciente extends React.Component {
                      let id = doc.id;
                      citas.innerHTML += `
                      <div class="cita">
-                     <div class="fotoCita"><img  src=${imagen}/></div>
+                     <div class="fotoCita"><img  src='${imagen}'/></div>
                      <label><b>Nombre:DR.</b> ${nombre1}</label>
                      <label><b>Especialidad:</b>${especialidad}</label>
                      <label><b>Costo consulta:$</b>${costo}</label>
@@ -428,7 +430,6 @@ class citaspaciente extends React.Component {
                      <label><b>Fecha:</b> ${fecha}</label>
                      <label><b>Horario:</b> ${horario}</label>
                      <label><b>Comentario:</b> ${comentario}</label>
-                     <a class="btnCancelarCita" href="/citaspaciente?id=${id}&iddoctor=${iddoctor}">Cancelar</a>
                    </div>
                           
                           `;
