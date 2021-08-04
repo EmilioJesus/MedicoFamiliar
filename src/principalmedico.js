@@ -11,8 +11,9 @@ class principalmedico extends Component {
       this.estado();
       this.opiniones();
    }
+   
 
-   especialidad() {
+   especialidad() { 
       const select = document.getElementById("selectespecialidad");
       let especialidad = [];
       db.collection("Administrador")
@@ -875,8 +876,7 @@ class principalmedico extends Component {
    //se mandan atraer las opiniones a la base de datos
    opiniones() {
       db.collection("Administrador/Usuarios/Opiniones")
-         .get()
-         .then((querySnapshot) => {
+         .onSnapshot((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                //div donde se mandan a imprimir
                var opiniones = document.getElementById("opiniones");
@@ -888,7 +888,7 @@ class principalmedico extends Component {
                </div>
 
                <div class="textTestimonial">
-               <h3>${doc.data().Nombre}</h3>
+               <h3>${doc.data().Email}</h3>
                <p>${doc.data().Opinion}</p>
                </div>
              `;
@@ -971,6 +971,7 @@ class principalmedico extends Component {
                className="contenedor contenedorCardTest "
                id="opiniones"
             ></div>
+
          </div>
       );
    }

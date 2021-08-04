@@ -237,12 +237,12 @@ class principaldoctor extends Component {
    }
 
    citasrealizadas() {
+      
       firebase.auth().onAuthStateChanged((user) => {
          if (user) {
             var uid = user.uid;
             var citas = document.getElementById("citasrealizadas");
             db.collection("Usuarios/" + uid + "/Citasrealizadas")
-               .orderBy("timestamp", "asc")
                .onSnapshot((querySnapshot) => {
                   querySnapshot.forEach((doc) => {
                      var imagen = doc.data().Imagenperfil;
@@ -266,7 +266,7 @@ class principaldoctor extends Component {
                      var id = doc.id;
                      citas.innerHTML += `
                          <div class="cita">
-                                 <div class="fotoCita"><img  src=${imagen}/></div>
+                                 <div class="fotoCita"><img  src='${imagen}'/></div>
                                  <label><b>Nombre:</b>${nombre1}</label>
                                  <label><b>Email:</b> ${email}</label>
                                  <label><b>Telefono:</b>${telefono}</label>
