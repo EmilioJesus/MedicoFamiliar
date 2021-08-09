@@ -15,9 +15,9 @@ const VideoPlayer = () => {
          <div className="contentVideo contenedor">
             {stream && (
                <div className="video">
-                  <h5>{name}</h5>
+                  <h5 className="nombreTitulo">{name}</h5>
                   <video
-                     style={{ height: "100%" }}
+                     style={{ height: "100%", width: "100%" }}
                      playsInline
                      muted
                      ref={myVideo}
@@ -27,7 +27,7 @@ const VideoPlayer = () => {
             )}
             {callAccepted && !callEnded && (
                <div className="video">
-                  <h5>{call.name}</h5>
+                  <h5 className="nombreTitulo">{call.name}</h5>
                   <video
                      style={{ height: "100%" }}
                      playsInline

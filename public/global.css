@@ -503,7 +503,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 /**
-* ! CITAS
+*! ZOOM 
 */
 
 .tituloCitas {
@@ -513,11 +513,22 @@ body::-webkit-scrollbar-thumb {
 }
 
 .contentVideo {
-   height: 100vh;
-   background: chartreuse;
+   min-height: auto;
+   max-height: 100vh;
+}
+
+.nombreTitulo {
+   position: absolute;
+   bottom: 0;
+   font-size: 1.4rem;
+   letter-spacing: 1px;
+   color: var(--colormorado);
+   width: 100%;
+   background: rgb(190 227 219);
 }
 
 .video {
+   position: relative;
    height: 50vh;
    background: var(--colormorado);
    border: 1px solid;

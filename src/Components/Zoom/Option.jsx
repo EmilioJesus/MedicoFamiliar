@@ -22,8 +22,9 @@ const Option = ({ children }) => {
          <div>
             <form noValidate autoComplete="of">
                <div>
-                  <h5>Account info</h5>
+                  <h5 className="tituloTabla">Account info</h5>
                   <input
+                     className="input"
                      placeholder="Name"
                      value={name}
                      onChange={(e) => {
@@ -37,7 +38,7 @@ const Option = ({ children }) => {
                         className="btn-principal seconbtn"
                         onClick={(e) => e.preventDefault()}
                      >
-                        Copy your id <i className="ri-file-copy-2-fill"></i>
+                        Copy id <i className="ri-file-copy-2-fill"></i>
                      </button>
                   </CopyToClipboard>
                </div>
@@ -46,8 +47,9 @@ const Option = ({ children }) => {
          <div>
             <form noValidate autoComplete="of">
                <div>
-                  <h5>Make a call</h5>
+                  <h5 className="tituloTabla">Make a call</h5>
                   <input
+                     className="input"
                      placeholder="Id to call"
                      value={idToCall}
                      onChange={(e) => {
