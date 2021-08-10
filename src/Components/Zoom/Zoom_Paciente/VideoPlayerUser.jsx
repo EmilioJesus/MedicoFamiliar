@@ -1,18 +1,26 @@
 import React, { useContext } from "react";
-import { SocketContext } from "../../SocketContext";
-import MenuLoggedUser from "../Menu/MenuLoggedUser";
+import { SocketContext } from "./../../../SocketContext";
+import MenuLoggedUser from "./../../Menu/MenuLoggedUser";
 
-const VideoPlayer = () => {
-   const { call, callAccepted, callEnded, myVideo, userVideo, stream, name } =
-      useContext(SocketContext);
+const VideoPlayerUser = () => {
+   const {
+      me,
+      call,
+      callAccepted,
+      callEnded,
+      myVideo,
+      userVideo,
+      stream,
+      name,
+   } = useContext(SocketContext);
 
+   console.log(me);
    return (
       <>
          <MenuLoggedUser />
          <h2 className="titulo">
             Mí cita <i className="ri-video-chat-fill"></i>
          </h2>
-
          <div className="contentVideo contenedor">
             {stream ? (
                <div className="video">
@@ -26,7 +34,19 @@ const VideoPlayer = () => {
                   />
                </div>
             ) : (
-               <h1>Concede los permisos</h1>
+               <>
+                  <h1
+                     style={{
+                        color: "var(--colormorado)",
+                        letterSpacing: "1px",
+                        lineHeight: "45px",
+                        padding: "1rem 2rem",
+                     }}
+                  >
+                     Concede los permisos de tu cámara y microfono para poder
+                     ingresar a la reunion
+                  </h1>
+               </>
             )}
             {callAccepted && !callEnded && (
                <div className="video">
@@ -44,4 +64,4 @@ const VideoPlayer = () => {
    );
 };
 
-export default VideoPlayer;
+export default VideoPlayerUser;

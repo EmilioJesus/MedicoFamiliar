@@ -21,7 +21,8 @@ const MenuLoggedUser = ({ cerrar_sesion }) => {
       <>
          <div className="menu">
             <a href="/principal">Principal</a>
-            <a href="/zoom">Zoom</a>
+            <a href="/zoomUser">Zoom Cliente</a>
+            <a href="/zoom">Zoom Doctor</a>
             <a href="/perfil_paciente">Mi perfil</a>
             <a href="/citaspaciente">Citas</a>
             <a href="#" onClick={cerrar_sesion}>
@@ -35,6 +36,7 @@ const MenuLoggedUser = ({ cerrar_sesion }) => {
          <div ref={refContent} className="contentMenu">
             <div className="menuMostrarMovil">
                <a href="/zoom">Zoom</a>
+               <a href="/zoomUser">Zoom Cliente</a>
                <a href="/Home">Principal</a>
                <a href="/perfil_paciente">Mi perfil</a>
                <a href="/citaspaciente">Citas</a>

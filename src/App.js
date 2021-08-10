@@ -22,12 +22,15 @@ import Footer from "./Components/Footer/Footer";
 import Editarhorario from "./editar_horario";
 import Doctorusuario from "./doctor_usuario";
 import Zoom from "./Components/Zoom/Zoom";
-
+import Zoom_Paciente from "./Components/Zoom/Zoom_Paciente/Zoom_Paciente.jsx";
 //rutas para poder ingresar a los documentos
 function App() {
    return (
       <Router>
          <Switch>
+            <Route path="/zoomUser">
+               <Zoom_Paciente />
+            </Route>
             <Route path="/zoom">
                <Zoom />
             </Route>

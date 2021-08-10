@@ -16,7 +16,6 @@ const Option = ({ children }) => {
 
    const [idToCall, setIdToCall] = useState("");
 
-   console.log(call);
    return (
       <div>
          <div>
