@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { SocketContext } from "./../../../SocketContext";
 
 const OptionPaciente = ({ children }) => {
@@ -14,14 +14,13 @@ const OptionPaciente = ({ children }) => {
       stream,
    } = useContext(SocketContext);
 
-   const [idToCall, setIdToCall] = useState("");
-
    return (
       <div>
          <div>
             {stream && (
                <form noValidate autoComplete="of">
                   <div>
+                     <h2 style={{ userSelect: "auto" }}>{me}</h2>
                      <h5 className="tituloTabla">Ingresa tu nombre</h5>
                      <input
                         className="input"
@@ -45,46 +44,7 @@ const OptionPaciente = ({ children }) => {
                </form>
             )}
          </div>
-         <div>
-            <form noValidate autoComplete="of">
-               {stream && (
-                  <div>
-                     <h5 className="tituloTabla">Make a call</h5>
-                     <input
-                        className="input"
-                        placeholder="Id to call"
-                        value={idToCall}
-                        onChange={(e) => {
-                           e.preventDefault();
-                           setIdToCall(e.target.value);
-                        }}
-                     />
 
-                     {callAccepted && !callEnded ? (
-                        <button
-                           className="btn-principal seconbtn"
-                           onClick={(e) => {
-                              e.preventDefault();
-                              leaveCall();
-                           }}
-                        >
-                           hang up <i className="ri-phone-fill"></i>
-                        </button>
-                     ) : (
-                        <button
-                           className="btn-principal seconbtn"
-                           onClick={(e) => {
-                              e.preventDefault();
-                              callUser(idToCall);
-                           }}
-                        >
-                           call <i className="ri-phone-fill"></i>
-                        </button>
-                     )}
-                  </div>
-               )}
-            </form>
-         </div>
          {children}
       </div>
    );

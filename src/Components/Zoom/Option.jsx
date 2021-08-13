@@ -21,7 +21,7 @@ const Option = ({ children }) => {
          <div>
             <form noValidate autoComplete="of">
                <div>
-                  <h5 className="tituloTabla">Account info</h5>
+                  <h5 className="tituloTabla">Ingresa tu nombre</h5>
                   <input
                      className="input"
                      placeholder="Name"
@@ -31,7 +31,7 @@ const Option = ({ children }) => {
                         setName(e.target.value);
                      }}
                   />
-                  {console.log(me)}
+                  {/* {console.log(me)}
                   <CopyToClipboard text={me}>
                      <button
                         className="btn-principal seconbtn"
@@ -39,14 +39,14 @@ const Option = ({ children }) => {
                      >
                         Copy id <i className="ri-file-copy-2-fill"></i>
                      </button>
-                  </CopyToClipboard>
+                  </CopyToClipboard> */}
                </div>
             </form>
          </div>
          <div>
             <form noValidate autoComplete="of">
                <div>
-                  <h5 className="tituloTabla">Make a call</h5>
+                  <h5 className="tituloTabla">Ingresa el id del paciente</h5>
                   <input
                      className="input"
                      placeholder="Id to call"

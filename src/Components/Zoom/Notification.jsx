@@ -7,11 +7,16 @@ const Notification = () => {
    return (
       <>
          {call.isReceivingCall && !callAccepted && (
-            <div>
-               <h1>{call.name} is calling</h1>
-               <button className="btn-principal seconbtn" onClick={answerCall}>
-                  Answer
-               </button>
+            <div className="alertaLlamada animate__animated animate__fadeIn ">
+               <div className="contentBlanco contentLLamada">
+                  <h1>{call.name} is calling</h1>
+                  <button
+                     className="btn-principal seconbtn"
+                     onClick={answerCall}
+                  >
+                     Answer <i className="ri-phone-fill"></i>
+                  </button>
+               </div>
             </div>
          )}
       </>
