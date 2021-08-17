@@ -3,6 +3,8 @@ import db from "./firebase_config";
 import firebase from "firebase/app";
 import Menu from "./Components/Menu/Menu";
 import "firebase/auth";
+import logo from "./imagenes/perfil_predeterminada.jpg";
+import userEvent from "@testing-library/user-event";
 const img = require.context("./imagenes", true);
 class iniciar extends Component {
    //funcion para iniciar sesion
@@ -69,12 +71,17 @@ class iniciar extends Component {
       firebase
          .auth()
          .signInWithPopup(provider)
-         .then((user) => {
-            console.log(user);
+         .then((result) => {
+             
+            var user = result.user;
+            var uid = user.uid;
+            window.location.href = "/principal";
+                     
          })
          .catch((error) => {
             console.log(error);
          });
+   
    }
 
    regis_face() {
@@ -84,6 +91,7 @@ class iniciar extends Component {
          .signInWithPopup(provider)
          .then((user) => {
             console.log(user);
+            window.location.href = "/principal";
          })
          .catch((error) => console.log(error));
    }

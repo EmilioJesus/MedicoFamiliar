@@ -41,9 +41,20 @@ class perfil_paciente extends Component {
                   const imc = doc.data().Imc;
                   document.getElementById("nombre").innerText =
                      nombre + " " + apeliidopaterno + " " + apeliidomaterno;
+                  document.getElementById("nombre").innerText =user.displayName;   
                   document.getElementById("correo").innerText = correo;
+                  document.getElementById("correo").innerText = user.email;
                   document.getElementById("telefono").innerText = telefono;
-                  document.getElementById("imagenperfil").src = imagenperfil;
+                  if(user.photoURL==null)
+                  {
+                     document.getElementById("imagenperfil").src = imagenperfil;
+                     
+                  }else
+                  {
+                     document.getElementById("imagenperfil").src = user.photoURL;
+
+                  }
+                  
                   document.getElementById("peso").innerText = peso;
                   document.getElementById("altura").innerText = altura;
                   document.getElementById("imc").innerText = imc;
@@ -58,7 +69,28 @@ class perfil_paciente extends Component {
                   document.getElementById("alturamodificar").value = altura;
                   var hoy = new Date();
                   var edad = hoy.getFullYear() - convercion.getFullYear();
-                  document.getElementById("edadPacientes").innerText = edad;
+                  
+                  if(nacimiento=="")
+                  {
+                     document.getElementById("edadPacientes").innerText ="";
+
+                  }
+                  else
+                  {
+                     document.getElementById("edadPacientes").innerText =edad;
+                     
+                  }
+                  if(peso==undefined && altura==undefined && imc==undefined)
+                  {
+                     
+                     document.getElementById("peso").innerText ="";
+                     document.getElementById("altura").innerText ="";
+                     document.getElementById("imc").innerText = "";
+                     document.getElementById("telefonomodificar").value = "";
+                     document.getElementById("pesomodificar").value = "";
+                     document.getElementById("alturamodificar").value = "";
+                  }
+                  
                });
          } else {
             window.location.href = "/";
